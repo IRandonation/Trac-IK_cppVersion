@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\trac_ik_example.dir/objects.a
+D:\Enviornment\MinGW\bin\ar.exe qc CMakeFiles\trac_ik_example.dir/objects.a @CMakeFiles\trac_ik_example.dir\objects1.rsp
+D:\Enviornment\MinGW\bin\g++.exe  -Wall -Wextra -O3 -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\trac_ik_example.dir/objects.a -Wl,--no-whole-archive -o trac_ik_example.exe -Wl,--out-implib,libtrac_ik_example.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\trac_ik_example.dir\linkLibs.rsp

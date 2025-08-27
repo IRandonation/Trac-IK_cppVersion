@@ -1,0 +1,1 @@
+  -L"D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build"  -L"D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/orocos_kdl/build/src"  libtrac_ik.a -lnlopt -lorocos-kdl -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

@@ -1,0 +1,1411 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      The system is: Windows - 10.0.26100 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: D:/Enviornment/MinGW/bin/gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is GNU, found in:
+        D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/4.0.2/CompilerIdC/a.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: D:/Enviornment/MinGW/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/4.0.2/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:19 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-u3ju8p"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-u3ju8p"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-u3ju8p'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_c3396/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_c3396.dir\\build.make CMakeFiles/cmTC_c3396.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-u3ju8p'
+        Building C object CMakeFiles/cmTC_c3396.dir/CMakeCCompilerABI.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_c3396.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCCompilerABI.c"
+        Using built-in specs.
+        COLLECT_GCC=D:\\Enviornment\\MinGW\\bin\\gcc.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../src/configure --enable-languages=c,c++ --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --disable-multilib --prefix=/e/temp/gcc/dest --with-sysroot=/e/temp/gcc/dest --disable-libstdcxx-pch --disable-libstdcxx-verbose --disable-nls --disable-shared --disable-win32-registry --enable-threads=posix --enable-libgomp --with-zstd=/c/mingw
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.2.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_c3396.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_c3396.dir\\'
+         D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/cc1.exe -quiet -v -iprefix D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_c3396.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o C:\\Users\\Shi99\\AppData\\Local\\Temp\\ccpPj9yg.s
+        GNU C17 (GCC) version 13.2.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 13.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/include"
+        ignoring nonexistent directory "/e/temp/gcc/dest/e/temp/gcc/dest/lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include"
+        ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed"
+        ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "/e/temp/gcc/dest/mingw/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include
+         D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed
+         D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        Compiler executable checksum: 57be99a5b99999b94eef0e4814eb03c2
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_c3396.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_c3396.dir\\'
+         D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_c3396.dir\\CMakeCCompilerABI.c.obj C:\\Users\\Shi99\\AppData\\Local\\Temp\\ccpPj9yg.s
+        GNU assembler version 2.41 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.41
+        COMPILER_PATH=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/;D:/Enviornment/MinGW/bin/../libexec/gcc/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/;D:/Enviornment/MinGW/bin/../lib/gcc/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_c3396.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_c3396.dir\\CMakeCCompilerABI.c.'
+        Linking C executable cmTC_c3396.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_c3396.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_c3396.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_c3396.dir/objects.a @CMakeFiles\\cmTC_c3396.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_c3396.dir/objects.a -Wl,--no-whole-archive -o cmTC_c3396.exe -Wl,--out-implib,libcmTC_c3396.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        Using built-in specs.
+        COLLECT_GCC=D:\\Enviornment\\MinGW\\bin\\gcc.exe
+        COLLECT_LTO_WRAPPER=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../src/configure --enable-languages=c,c++ --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --disable-multilib --prefix=/e/temp/gcc/dest --with-sysroot=/e/temp/gcc/dest --disable-libstdcxx-pch --disable-libstdcxx-verbose --disable-nls --disable-shared --disable-win32-registry --enable-threads=posix --enable-libgomp --with-zstd=/c/mingw
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.2.0 (GCC) 
+        COMPILER_PATH=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/;D:/Enviornment/MinGW/bin/../libexec/gcc/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/;D:/Enviornment/MinGW/bin/../lib/gcc/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c3396.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c3396.'
+         D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/collect2.exe -plugin D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Shi99\\AppData\\Local\\Temp\\ccB07qot.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/e/temp/gcc/dest -m i386pep -Bdynamic -o cmTC_c3396.exe D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LD:/Enviornment/MinGW/bin/../lib/gcc -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_c3396.dir/objects.a --no-whole-archive --out-implib libcmTC_c3396.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o
+        collect2 version 13.2.0
+        D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Shi99\\AppData\\Local\\Temp\\ccB07qot.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/e/temp/gcc/dest -m i386pep -Bdynamic -o cmTC_c3396.exe D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LD:/Enviornment/MinGW/bin/../lib/gcc -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_c3396.dir/objects.a --no-whole-archive --out-implib libcmTC_c3396.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o
+        GNU ld (GNU Binutils) 2.41
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c3396.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c3396.'
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-u3ju8p'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:191 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include]
+          add: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed]
+          add: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include]
+        end of search list found
+        collapse include dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include] ==> [D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0/include]
+        collapse include dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed] ==> [D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed]
+        collapse include dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include] ==> [D:/Enviornment/MinGW/x86_64-w64-mingw32/include]
+        implicit include dirs: [D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0/include;D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed;D:/Enviornment/MinGW/x86_64-w64-mingw32/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:227 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-u3ju8p']
+        ignore line: []
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_c3396/fast]
+        ignore line: [D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_c3396.dir\\build.make CMakeFiles/cmTC_c3396.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-u3ju8p']
+        ignore line: [Building C object CMakeFiles/cmTC_c3396.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [D:\\Enviornment\\MinGW\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_c3396.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCCompilerABI.c"]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=D:\\Enviornment\\MinGW\\bin\\gcc.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../src/configure --enable-languages=c c++ --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --disable-multilib --prefix=/e/temp/gcc/dest --with-sysroot=/e/temp/gcc/dest --disable-libstdcxx-pch --disable-libstdcxx-verbose --disable-nls --disable-shared --disable-win32-registry --enable-threads=posix --enable-libgomp --with-zstd=/c/mingw]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.2.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_c3396.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_c3396.dir\\']
+        ignore line: [ D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/cc1.exe -quiet -v -iprefix D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_c3396.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o C:\\Users\\Shi99\\AppData\\Local\\Temp\\ccpPj9yg.s]
+        ignore line: [GNU C17 (GCC) version 13.2.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 13.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/include"]
+        ignore line: [ignoring nonexistent directory "/e/temp/gcc/dest/e/temp/gcc/dest/lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include"]
+        ignore line: [ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed"]
+        ignore line: [ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [ignoring nonexistent directory "/e/temp/gcc/dest/mingw/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include]
+        ignore line: [ D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed]
+        ignore line: [ D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 57be99a5b99999b94eef0e4814eb03c2]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_c3396.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_c3396.dir\\']
+        ignore line: [ D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_c3396.dir\\CMakeCCompilerABI.c.obj C:\\Users\\Shi99\\AppData\\Local\\Temp\\ccpPj9yg.s]
+        ignore line: [GNU assembler version 2.41 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.41]
+        ignore line: [COMPILER_PATH=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/]
+        ignore line: [D:/Enviornment/MinGW/bin/../libexec/gcc/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_c3396.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_c3396.dir\\CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_c3396.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_c3396.dir\\link.txt --verbose=1]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_c3396.dir/objects.a]
+        ignore line: [D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_c3396.dir/objects.a @CMakeFiles\\cmTC_c3396.dir\\objects1.rsp]
+        ignore line: [D:\\Enviornment\\MinGW\\bin\\gcc.exe  -v -Wl -v -Wl --whole-archive CMakeFiles\\cmTC_c3396.dir/objects.a -Wl --no-whole-archive -o cmTC_c3396.exe -Wl --out-implib libcmTC_c3396.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=D:\\Enviornment\\MinGW\\bin\\gcc.exe]
+        ignore line: [COLLECT_LTO_WRAPPER=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../src/configure --enable-languages=c c++ --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --disable-multilib --prefix=/e/temp/gcc/dest --with-sysroot=/e/temp/gcc/dest --disable-libstdcxx-pch --disable-libstdcxx-verbose --disable-nls --disable-shared --disable-win32-registry --enable-threads=posix --enable-libgomp --with-zstd=/c/mingw]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.2.0 (GCC) ]
+        ignore line: [COMPILER_PATH=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/]
+        ignore line: [D:/Enviornment/MinGW/bin/../libexec/gcc/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c3396.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c3396.']
+        link line: [ D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/collect2.exe -plugin D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Shi99\\AppData\\Local\\Temp\\ccB07qot.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/e/temp/gcc/dest -m i386pep -Bdynamic -o cmTC_c3396.exe D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LD:/Enviornment/MinGW/bin/../lib/gcc -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_c3396.dir/objects.a --no-whole-archive --out-implib libcmTC_c3396.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
+          arg [D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/collect2.exe] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll] ==> ignore
+          arg [-plugin-opt=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\Shi99\\AppData\\Local\\Temp\\ccB07qot.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [--sysroot=/e/temp/gcc/dest] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
+          arg [-o] ==> ignore
+          arg [cmTC_c3396.exe] ==> ignore
+          arg [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
+          arg [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o] ==> obj [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o]
+          arg [-LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0] ==> dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0]
+          arg [-LD:/Enviornment/MinGW/bin/../lib/gcc] ==> dir [D:/Enviornment/MinGW/bin/../lib/gcc]
+          arg [-LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib]
+          arg [-LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib] ==> dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib]
+          arg [-LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib]
+          arg [-LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../..] ==> dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../..]
+          arg [-v] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles\\cmTC_c3396.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_c3396.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o] ==> obj [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
+        ignore line: [collect2 version 13.2.0]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Shi99\\AppData\\Local\\Temp\\ccB07qot.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/e/temp/gcc/dest -m i386pep -Bdynamic -o cmTC_c3396.exe D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LD:/Enviornment/MinGW/bin/../lib/gcc -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_c3396.dir/objects.a --no-whole-archive --out-implib libcmTC_c3396.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
+        linker tool for 'C': D:/Enviornment/MinGW/x86_64-w64-mingw32/bin/ld.exe
+        remove lib [msvcrt]
+        remove lib [msvcrt]
+        collapse obj [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> [D:/Enviornment/MinGW/x86_64-w64-mingw32/lib/crt2.o]
+        collapse obj [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o] ==> [D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o]
+        collapse obj [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o] ==> [D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
+        collapse library dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0] ==> [D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0]
+        collapse library dir [D:/Enviornment/MinGW/bin/../lib/gcc] ==> [D:/Enviornment/MinGW/lib/gcc]
+        collapse library dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [D:/Enviornment/MinGW/x86_64-w64-mingw32/lib]
+        collapse library dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib] ==> [D:/Enviornment/MinGW/lib]
+        collapse library dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib] ==> [D:/Enviornment/MinGW/x86_64-w64-mingw32/lib]
+        collapse library dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../..] ==> [D:/Enviornment/MinGW/lib]
+        implicit libs: [mingw32;gcc;moldname;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;moldname;mingwex;kernel32]
+        implicit objs: [D:/Enviornment/MinGW/x86_64-w64-mingw32/lib/crt2.o;D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o;D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
+        implicit dirs: [D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0;D:/Enviornment/MinGW/lib/gcc;D:/Enviornment/MinGW/x86_64-w64-mingw32/lib;D:/Enviornment/MinGW/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:270 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      Running the C compiler's linker: "D:/Enviornment/MinGW/x86_64-w64-mingw32/bin/ld.exe" "-v"
+      GNU ld (GNU Binutils) 2.41
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:19 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-qi3nmy"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-qi3nmy"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-qi3nmy'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_de6f3/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_de6f3.dir\\build.make CMakeFiles/cmTC_de6f3.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-qi3nmy'
+        Building CXX object CMakeFiles/cmTC_de6f3.dir/CMakeCXXCompilerABI.cpp.obj
+        D:\\Enviornment\\MinGW\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_de6f3.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
+        Using built-in specs.
+        COLLECT_GCC=D:\\Enviornment\\MinGW\\bin\\g++.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../src/configure --enable-languages=c,c++ --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --disable-multilib --prefix=/e/temp/gcc/dest --with-sysroot=/e/temp/gcc/dest --disable-libstdcxx-pch --disable-libstdcxx-verbose --disable-nls --disable-shared --disable-win32-registry --enable-threads=posix --enable-libgomp --with-zstd=/c/mingw
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.2.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_de6f3.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_de6f3.dir\\'
+         D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/cc1plus.exe -quiet -v -iprefix D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_de6f3.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\Shi99\\AppData\\Local\\Temp\\ccKzz2Xo.s
+        GNU C++17 (GCC) version 13.2.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 13.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0"
+        ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/x86_64-w64-mingw32"
+        ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/backward"
+        ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/include"
+        ignoring nonexistent directory "/e/temp/gcc/dest/e/temp/gcc/dest/lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include"
+        ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed"
+        ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "/e/temp/gcc/dest/mingw/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0
+         D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/x86_64-w64-mingw32
+         D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/backward
+         D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include
+         D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed
+         D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        Compiler executable checksum: aa8d155dea9d0b877613f1961dc4601a
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_de6f3.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_de6f3.dir\\'
+         D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_de6f3.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\Shi99\\AppData\\Local\\Temp\\ccKzz2Xo.s
+        GNU assembler version 2.41 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.41
+        COMPILER_PATH=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/;D:/Enviornment/MinGW/bin/../libexec/gcc/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/;D:/Enviornment/MinGW/bin/../lib/gcc/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_de6f3.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_de6f3.dir\\CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_de6f3.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_de6f3.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_de6f3.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_de6f3.dir/objects.a @CMakeFiles\\cmTC_de6f3.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\g++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_de6f3.dir/objects.a -Wl,--no-whole-archive -o cmTC_de6f3.exe -Wl,--out-implib,libcmTC_de6f3.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        Using built-in specs.
+        COLLECT_GCC=D:\\Enviornment\\MinGW\\bin\\g++.exe
+        COLLECT_LTO_WRAPPER=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../src/configure --enable-languages=c,c++ --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --disable-multilib --prefix=/e/temp/gcc/dest --with-sysroot=/e/temp/gcc/dest --disable-libstdcxx-pch --disable-libstdcxx-verbose --disable-nls --disable-shared --disable-win32-registry --enable-threads=posix --enable-libgomp --with-zstd=/c/mingw
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.2.0 (GCC) 
+        COMPILER_PATH=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/;D:/Enviornment/MinGW/bin/../libexec/gcc/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/;D:/Enviornment/MinGW/bin/../lib/gcc/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/;D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_de6f3.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_de6f3.'
+         D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/collect2.exe -plugin D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Shi99\\AppData\\Local\\Temp\\cc3MjMV1.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/e/temp/gcc/dest -m i386pep -Bdynamic -o cmTC_de6f3.exe D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LD:/Enviornment/MinGW/bin/../lib/gcc -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_de6f3.dir/objects.a --no-whole-archive --out-implib libcmTC_de6f3.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o
+        collect2 version 13.2.0
+        D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Shi99\\AppData\\Local\\Temp\\cc3MjMV1.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/e/temp/gcc/dest -m i386pep -Bdynamic -o cmTC_de6f3.exe D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LD:/Enviornment/MinGW/bin/../lib/gcc -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_de6f3.dir/objects.a --no-whole-archive --out-implib libcmTC_de6f3.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o
+        GNU ld (GNU Binutils) 2.41
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_de6f3.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_de6f3.'
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-qi3nmy'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:191 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0]
+          add: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/x86_64-w64-mingw32]
+          add: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/backward]
+          add: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include]
+          add: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed]
+          add: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include]
+        end of search list found
+        collapse include dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0] ==> [D:/Enviornment/MinGW/include/c++/13.2.0]
+        collapse include dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/x86_64-w64-mingw32] ==> [D:/Enviornment/MinGW/include/c++/13.2.0/x86_64-w64-mingw32]
+        collapse include dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/backward] ==> [D:/Enviornment/MinGW/include/c++/13.2.0/backward]
+        collapse include dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include] ==> [D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0/include]
+        collapse include dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed] ==> [D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed]
+        collapse include dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include] ==> [D:/Enviornment/MinGW/x86_64-w64-mingw32/include]
+        implicit include dirs: [D:/Enviornment/MinGW/include/c++/13.2.0;D:/Enviornment/MinGW/include/c++/13.2.0/x86_64-w64-mingw32;D:/Enviornment/MinGW/include/c++/13.2.0/backward;D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0/include;D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed;D:/Enviornment/MinGW/x86_64-w64-mingw32/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:227 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-qi3nmy']
+        ignore line: []
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_de6f3/fast]
+        ignore line: [D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_de6f3.dir\\build.make CMakeFiles/cmTC_de6f3.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-qi3nmy']
+        ignore line: [Building CXX object CMakeFiles/cmTC_de6f3.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [D:\\Enviornment\\MinGW\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_de6f3.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=D:\\Enviornment\\MinGW\\bin\\g++.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../src/configure --enable-languages=c c++ --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --disable-multilib --prefix=/e/temp/gcc/dest --with-sysroot=/e/temp/gcc/dest --disable-libstdcxx-pch --disable-libstdcxx-verbose --disable-nls --disable-shared --disable-win32-registry --enable-threads=posix --enable-libgomp --with-zstd=/c/mingw]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.2.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_de6f3.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_de6f3.dir\\']
+        ignore line: [ D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/cc1plus.exe -quiet -v -iprefix D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_de6f3.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\Shi99\\AppData\\Local\\Temp\\ccKzz2Xo.s]
+        ignore line: [GNU C++17 (GCC) version 13.2.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 13.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0"]
+        ignore line: [ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/x86_64-w64-mingw32"]
+        ignore line: [ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/backward"]
+        ignore line: [ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/include"]
+        ignore line: [ignoring nonexistent directory "/e/temp/gcc/dest/e/temp/gcc/dest/lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include"]
+        ignore line: [ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed"]
+        ignore line: [ignoring duplicate directory "D:/Enviornment/MinGW/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [ignoring nonexistent directory "/e/temp/gcc/dest/mingw/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0]
+        ignore line: [ D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/x86_64-w64-mingw32]
+        ignore line: [ D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/backward]
+        ignore line: [ D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include]
+        ignore line: [ D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed]
+        ignore line: [ D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: aa8d155dea9d0b877613f1961dc4601a]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_de6f3.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_de6f3.dir\\']
+        ignore line: [ D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_de6f3.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\Shi99\\AppData\\Local\\Temp\\ccKzz2Xo.s]
+        ignore line: [GNU assembler version 2.41 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.41]
+        ignore line: [COMPILER_PATH=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/]
+        ignore line: [D:/Enviornment/MinGW/bin/../libexec/gcc/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_de6f3.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles\\cmTC_de6f3.dir\\CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_de6f3.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_de6f3.dir\\link.txt --verbose=1]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_de6f3.dir/objects.a]
+        ignore line: [D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_de6f3.dir/objects.a @CMakeFiles\\cmTC_de6f3.dir\\objects1.rsp]
+        ignore line: [D:\\Enviornment\\MinGW\\bin\\g++.exe  -v -Wl -v -Wl --whole-archive CMakeFiles\\cmTC_de6f3.dir/objects.a -Wl --no-whole-archive -o cmTC_de6f3.exe -Wl --out-implib libcmTC_de6f3.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=D:\\Enviornment\\MinGW\\bin\\g++.exe]
+        ignore line: [COLLECT_LTO_WRAPPER=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../src/configure --enable-languages=c c++ --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --disable-multilib --prefix=/e/temp/gcc/dest --with-sysroot=/e/temp/gcc/dest --disable-libstdcxx-pch --disable-libstdcxx-verbose --disable-nls --disable-shared --disable-win32-registry --enable-threads=posix --enable-libgomp --with-zstd=/c/mingw]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.2.0 (GCC) ]
+        ignore line: [COMPILER_PATH=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/]
+        ignore line: [D:/Enviornment/MinGW/bin/../libexec/gcc/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_de6f3.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_de6f3.']
+        link line: [ D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/collect2.exe -plugin D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Shi99\\AppData\\Local\\Temp\\cc3MjMV1.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/e/temp/gcc/dest -m i386pep -Bdynamic -o cmTC_de6f3.exe D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LD:/Enviornment/MinGW/bin/../lib/gcc -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_de6f3.dir/objects.a --no-whole-archive --out-implib libcmTC_de6f3.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
+          arg [D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/collect2.exe] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll] ==> ignore
+          arg [-plugin-opt=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\Shi99\\AppData\\Local\\Temp\\cc3MjMV1.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [--sysroot=/e/temp/gcc/dest] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
+          arg [-o] ==> ignore
+          arg [cmTC_de6f3.exe] ==> ignore
+          arg [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
+          arg [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o] ==> obj [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o]
+          arg [-LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0] ==> dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0]
+          arg [-LD:/Enviornment/MinGW/bin/../lib/gcc] ==> dir [D:/Enviornment/MinGW/bin/../lib/gcc]
+          arg [-LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib]
+          arg [-LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib] ==> dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib]
+          arg [-LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib]
+          arg [-LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../..] ==> dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../..]
+          arg [-v] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles\\cmTC_de6f3.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_de6f3.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o] ==> obj [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
+        ignore line: [collect2 version 13.2.0]
+        ignore line: [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=D:/Enviornment/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\Shi99\\AppData\\Local\\Temp\\cc3MjMV1.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=/e/temp/gcc/dest -m i386pep -Bdynamic -o cmTC_de6f3.exe D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LD:/Enviornment/MinGW/bin/../lib/gcc -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LD:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_de6f3.dir/objects.a --no-whole-archive --out-implib libcmTC_de6f3.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
+        linker tool for 'CXX': D:/Enviornment/MinGW/x86_64-w64-mingw32/bin/ld.exe
+        remove lib [msvcrt]
+        remove lib [msvcrt]
+        collapse obj [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> [D:/Enviornment/MinGW/x86_64-w64-mingw32/lib/crt2.o]
+        collapse obj [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o] ==> [D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o]
+        collapse obj [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o] ==> [D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
+        collapse library dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0] ==> [D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0]
+        collapse library dir [D:/Enviornment/MinGW/bin/../lib/gcc] ==> [D:/Enviornment/MinGW/lib/gcc]
+        collapse library dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [D:/Enviornment/MinGW/x86_64-w64-mingw32/lib]
+        collapse library dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib] ==> [D:/Enviornment/MinGW/lib]
+        collapse library dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib] ==> [D:/Enviornment/MinGW/x86_64-w64-mingw32/lib]
+        collapse library dir [D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../..] ==> [D:/Enviornment/MinGW/lib]
+        implicit libs: [stdc++;mingw32;gcc;moldname;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;moldname;mingwex;kernel32]
+        implicit objs: [D:/Enviornment/MinGW/x86_64-w64-mingw32/lib/crt2.o;D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o;D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
+        implicit dirs: [D:/Enviornment/MinGW/lib/gcc/x86_64-w64-mingw32/13.2.0;D:/Enviornment/MinGW/lib/gcc;D:/Enviornment/MinGW/x86_64-w64-mingw32/lib;D:/Enviornment/MinGW/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:270 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      Running the CXX compiler's linker: "D:/Enviornment/MinGW/x86_64-w64-mingw32/bin/ld.exe" "-v"
+      GNU ld (GNU Binutils) 2.41
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMakeLists.txt:85 (check_include_file)"
+    checks:
+      - "Looking for getopt.h"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-fagonw"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-fagonw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_GETOPT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-fagonw'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_fcfde/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_fcfde.dir\\build.make CMakeFiles/cmTC_fcfde.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-fagonw'
+        Building C object CMakeFiles/cmTC_fcfde.dir/CheckIncludeFile.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe    -o CMakeFiles\\cmTC_fcfde.dir\\CheckIncludeFile.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fagonw\\CheckIncludeFile.c
+        Linking C executable cmTC_fcfde.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_fcfde.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_fcfde.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_fcfde.dir/objects.a @CMakeFiles\\cmTC_fcfde.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_fcfde.dir/objects.a -Wl,--no-whole-archive -o cmTC_fcfde.exe -Wl,--out-implib,libcmTC_fcfde.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_fcfde.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-fagonw'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMakeLists.txt:86 (check_include_file)"
+    checks:
+      - "Looking for unistd.h"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-x72f0c"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-x72f0c"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-x72f0c'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_97bb8/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_97bb8.dir\\build.make CMakeFiles/cmTC_97bb8.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-x72f0c'
+        Building C object CMakeFiles/cmTC_97bb8.dir/CheckIncludeFile.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe    -o CMakeFiles\\cmTC_97bb8.dir\\CheckIncludeFile.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-x72f0c\\CheckIncludeFile.c
+        Linking C executable cmTC_97bb8.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_97bb8.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_97bb8.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_97bb8.dir/objects.a @CMakeFiles\\cmTC_97bb8.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_97bb8.dir/objects.a -Wl,--no-whole-archive -o cmTC_97bb8.exe -Wl,--out-implib,libcmTC_97bb8.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_97bb8.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-x72f0c'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMakeLists.txt:87 (check_include_file)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-0rojs7"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-0rojs7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-0rojs7'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_60536/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_60536.dir\\build.make CMakeFiles/cmTC_60536.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-0rojs7'
+        Building C object CMakeFiles/cmTC_60536.dir/CheckIncludeFile.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe    -o CMakeFiles\\cmTC_60536.dir\\CheckIncludeFile.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0rojs7\\CheckIncludeFile.c
+        Linking C executable cmTC_60536.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_60536.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_60536.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_60536.dir/objects.a @CMakeFiles\\cmTC_60536.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_60536.dir/objects.a -Wl,--no-whole-archive -o cmTC_60536.exe -Wl,--out-implib,libcmTC_60536.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_60536.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-0rojs7'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMakeLists.txt:88 (check_include_file)"
+    checks:
+      - "Looking for time.h"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-xr62gb"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-xr62gb"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_TIME_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-xr62gb'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_f3b68/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_f3b68.dir\\build.make CMakeFiles/cmTC_f3b68.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-xr62gb'
+        Building C object CMakeFiles/cmTC_f3b68.dir/CheckIncludeFile.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe    -o CMakeFiles\\cmTC_f3b68.dir\\CheckIncludeFile.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xr62gb\\CheckIncludeFile.c
+        Linking C executable cmTC_f3b68.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_f3b68.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_f3b68.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_f3b68.dir/objects.a @CMakeFiles\\cmTC_f3b68.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_f3b68.dir/objects.a -Wl,--no-whole-archive -o cmTC_f3b68.exe -Wl,--out-implib,libcmTC_f3b68.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_f3b68.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-xr62gb'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMakeLists.txt:89 (check_include_file)"
+    checks:
+      - "Looking for sys/time.h"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-af9ykh"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-af9ykh"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_SYS_TIME_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-af9ykh'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_344c0/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_344c0.dir\\build.make CMakeFiles/cmTC_344c0.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-af9ykh'
+        Building C object CMakeFiles/cmTC_344c0.dir/CheckIncludeFile.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe    -o CMakeFiles\\cmTC_344c0.dir\\CheckIncludeFile.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-af9ykh\\CheckIncludeFile.c
+        Linking C executable cmTC_344c0.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_344c0.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_344c0.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_344c0.dir/objects.a @CMakeFiles\\cmTC_344c0.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_344c0.dir/objects.a -Wl,--no-whole-archive -o cmTC_344c0.exe -Wl,--out-implib,libcmTC_344c0.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_344c0.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-af9ykh'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "CMakeLists.txt:93 (check_function_exists)"
+    checks:
+      - "Looking for getpid"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-71csuq"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-71csuq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_GETPID"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-71csuq'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_07288/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_07288.dir\\build.make CMakeFiles/cmTC_07288.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-71csuq'
+        Building C object CMakeFiles/cmTC_07288.dir/CheckFunctionExists.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe   -DCHECK_FUNCTION_EXISTS=getpid -o CMakeFiles\\cmTC_07288.dir\\CheckFunctionExists.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-71csuq\\CheckFunctionExists.c
+        Linking C executable cmTC_07288.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_07288.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_07288.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_07288.dir/objects.a @CMakeFiles\\cmTC_07288.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe  -DCHECK_FUNCTION_EXISTS=getpid -Wl,--whole-archive CMakeFiles\\cmTC_07288.dir/objects.a -Wl,--no-whole-archive -o cmTC_07288.exe -Wl,--out-implib,libcmTC_07288.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_07288.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-71csuq'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "CMakeLists.txt:94 (check_function_exists)"
+    checks:
+      - "Looking for syscall"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-spfp9q"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-spfp9q"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_GETTID_SYSCALL"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-spfp9q'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_d46a0/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_d46a0.dir\\build.make CMakeFiles/cmTC_d46a0.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-spfp9q'
+        Building C object CMakeFiles/cmTC_d46a0.dir/CheckFunctionExists.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe   -DCHECK_FUNCTION_EXISTS=syscall -o CMakeFiles\\cmTC_d46a0.dir\\CheckFunctionExists.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-spfp9q\\CheckFunctionExists.c
+        Linking C executable cmTC_d46a0.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_d46a0.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_d46a0.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_d46a0.dir/objects.a @CMakeFiles\\cmTC_d46a0.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe  -DCHECK_FUNCTION_EXISTS=syscall -Wl,--whole-archive CMakeFiles\\cmTC_d46a0.dir/objects.a -Wl,--no-whole-archive -o cmTC_d46a0.exe -Wl,--out-implib,libcmTC_d46a0.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_d46a0.dir\\linkLibs.rsp
+        D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles\\cmTC_d46a0.dir/objects.a(CheckFunctionExists.c.obj):CheckFunctionExists.c:(.text+0x15): undefined reference to `syscall'
+        collect2.exe: error: ld returned 1 exit status
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_d46a0.dir\\build.make:103: cmTC_d46a0.exe] Error 1
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-spfp9q'
+        mingw32-make: *** [Makefile:133: cmTC_d46a0/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "CMakeLists.txt:95 (check_function_exists)"
+    checks:
+      - "Looking for isinf"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-oiabfr"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-oiabfr"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_ISINF"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-oiabfr'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_41a24/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_41a24.dir\\build.make CMakeFiles/cmTC_41a24.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-oiabfr'
+        Building C object CMakeFiles/cmTC_41a24.dir/CheckFunctionExists.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe   -DCHECK_FUNCTION_EXISTS=isinf -o CMakeFiles\\cmTC_41a24.dir\\CheckFunctionExists.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-oiabfr\\CheckFunctionExists.c
+        <command-line>: warning: conflicting types for built-in function 'isinf'; expected 'int()' [-Wbuiltin-declaration-mismatch]
+        D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-oiabfr\\CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-oiabfr\\CheckFunctionExists.c:1:1: note: 'isinf' is declared in header '<math.h>'
+          +++ |+#include <math.h>
+            1 | #ifdef CHECK_FUNCTION_EXISTS
+        Linking C executable cmTC_41a24.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_41a24.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_41a24.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_41a24.dir/objects.a @CMakeFiles\\cmTC_41a24.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe  -DCHECK_FUNCTION_EXISTS=isinf -Wl,--whole-archive CMakeFiles\\cmTC_41a24.dir/objects.a -Wl,--no-whole-archive -o cmTC_41a24.exe -Wl,--out-implib,libcmTC_41a24.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_41a24.dir\\linkLibs.rsp
+        D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles\\cmTC_41a24.dir/objects.a(CheckFunctionExists.c.obj):CheckFunctionExists.c:(.text+0x15): undefined reference to `isinf'
+        collect2.exe: error: ld returned 1 exit status
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_41a24.dir\\build.make:103: cmTC_41a24.exe] Error 1
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-oiabfr'
+        mingw32-make: *** [Makefile:133: cmTC_41a24/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "CMakeLists.txt:96 (check_function_exists)"
+    checks:
+      - "Looking for isnan"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-i3unjp"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-i3unjp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_ISNAN"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-i3unjp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_33d6e/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_33d6e.dir\\build.make CMakeFiles/cmTC_33d6e.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-i3unjp'
+        Building C object CMakeFiles/cmTC_33d6e.dir/CheckFunctionExists.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe   -DCHECK_FUNCTION_EXISTS=isnan -o CMakeFiles\\cmTC_33d6e.dir\\CheckFunctionExists.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i3unjp\\CheckFunctionExists.c
+        <command-line>: warning: conflicting types for built-in function 'isnan'; expected 'int()' [-Wbuiltin-declaration-mismatch]
+        D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i3unjp\\CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i3unjp\\CheckFunctionExists.c:1:1: note: 'isnan' is declared in header '<math.h>'
+          +++ |+#include <math.h>
+            1 | #ifdef CHECK_FUNCTION_EXISTS
+        Linking C executable cmTC_33d6e.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_33d6e.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_33d6e.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_33d6e.dir/objects.a @CMakeFiles\\cmTC_33d6e.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe  -DCHECK_FUNCTION_EXISTS=isnan -Wl,--whole-archive CMakeFiles\\cmTC_33d6e.dir/objects.a -Wl,--no-whole-archive -o cmTC_33d6e.exe -Wl,--out-implib,libcmTC_33d6e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_33d6e.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-i3unjp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "CMakeLists.txt:97 (check_function_exists)"
+    checks:
+      - "Looking for gettimeofday"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-yr0etk"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-yr0etk"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_GETTIMEOFDAY"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-yr0etk'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_4fa29/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_4fa29.dir\\build.make CMakeFiles/cmTC_4fa29.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-yr0etk'
+        Building C object CMakeFiles/cmTC_4fa29.dir/CheckFunctionExists.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe   -DCHECK_FUNCTION_EXISTS=gettimeofday -o CMakeFiles\\cmTC_4fa29.dir\\CheckFunctionExists.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yr0etk\\CheckFunctionExists.c
+        Linking C executable cmTC_4fa29.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_4fa29.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_4fa29.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_4fa29.dir/objects.a @CMakeFiles\\cmTC_4fa29.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe  -DCHECK_FUNCTION_EXISTS=gettimeofday -Wl,--whole-archive CMakeFiles\\cmTC_4fa29.dir/objects.a -Wl,--no-whole-archive -o cmTC_4fa29.exe -Wl,--out-implib,libcmTC_4fa29.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_4fa29.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-yr0etk'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "CMakeLists.txt:98 (check_function_exists)"
+    checks:
+      - "Looking for qsort_r"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-qacoap"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-qacoap"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_QSORT_R"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-qacoap'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_47254/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_47254.dir\\build.make CMakeFiles/cmTC_47254.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-qacoap'
+        Building C object CMakeFiles/cmTC_47254.dir/CheckFunctionExists.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe   -DCHECK_FUNCTION_EXISTS=qsort_r -o CMakeFiles\\cmTC_47254.dir\\CheckFunctionExists.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qacoap\\CheckFunctionExists.c
+        Linking C executable cmTC_47254.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_47254.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_47254.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_47254.dir/objects.a @CMakeFiles\\cmTC_47254.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe  -DCHECK_FUNCTION_EXISTS=qsort_r -Wl,--whole-archive CMakeFiles\\cmTC_47254.dir/objects.a -Wl,--no-whole-archive -o cmTC_47254.exe -Wl,--out-implib,libcmTC_47254.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_47254.dir\\linkLibs.rsp
+        D:/Enviornment/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles\\cmTC_47254.dir/objects.a(CheckFunctionExists.c.obj):CheckFunctionExists.c:(.text+0x15): undefined reference to `qsort_r'
+        collect2.exe: error: ld returned 1 exit status
+        mingw32-make[1]: *** [CMakeFiles\\cmTC_47254.dir\\build.make:103: cmTC_47254.exe] Error 1
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-qacoap'
+        mingw32-make: *** [Makefile:133: cmTC_47254/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "CMakeLists.txt:99 (check_function_exists)"
+    checks:
+      - "Looking for time"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-xoomf9"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-xoomf9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_TIME"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-xoomf9'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_8b121/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_8b121.dir\\build.make CMakeFiles/cmTC_8b121.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-xoomf9'
+        Building C object CMakeFiles/cmTC_8b121.dir/CheckFunctionExists.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe   -DCHECK_FUNCTION_EXISTS=time -o CMakeFiles\\cmTC_8b121.dir\\CheckFunctionExists.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xoomf9\\CheckFunctionExists.c
+        Linking C executable cmTC_8b121.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_8b121.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_8b121.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_8b121.dir/objects.a @CMakeFiles\\cmTC_8b121.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe  -DCHECK_FUNCTION_EXISTS=time -Wl,--whole-archive CMakeFiles\\cmTC_8b121.dir/objects.a -Wl,--no-whole-archive -o cmTC_8b121.exe -Wl,--out-implib,libcmTC_8b121.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_8b121.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-xoomf9'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "CMakeLists.txt:100 (check_function_exists)"
+    checks:
+      - "Looking for copysign"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-t2jymd"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-t2jymd"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_COPYSIGN"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-t2jymd'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_42f4a/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_42f4a.dir\\build.make CMakeFiles/cmTC_42f4a.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-t2jymd'
+        Building C object CMakeFiles/cmTC_42f4a.dir/CheckFunctionExists.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe   -DCHECK_FUNCTION_EXISTS=copysign -o CMakeFiles\\cmTC_42f4a.dir\\CheckFunctionExists.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t2jymd\\CheckFunctionExists.c
+        <command-line>: warning: conflicting types for built-in function 'copysign'; expected 'double(double,  double)' [-Wbuiltin-declaration-mismatch]
+        D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t2jymd\\CheckFunctionExists.c:7:3: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+            7 |   CHECK_FUNCTION_EXISTS(void);
+              |   ^~~~~~~~~~~~~~~~~~~~~
+        D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t2jymd\\CheckFunctionExists.c:1:1: note: 'copysign' is declared in header '<math.h>'
+          +++ |+#include <math.h>
+            1 | #ifdef CHECK_FUNCTION_EXISTS
+        Linking C executable cmTC_42f4a.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_42f4a.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_42f4a.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_42f4a.dir/objects.a @CMakeFiles\\cmTC_42f4a.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe  -DCHECK_FUNCTION_EXISTS=copysign -Wl,--whole-archive CMakeFiles\\cmTC_42f4a.dir/objects.a -Wl,--no-whole-archive -o cmTC_42f4a.exe -Wl,--out-implib,libcmTC_42f4a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_42f4a.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-t2jymd'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "CMakeLists.txt:101 (check_function_exists)"
+    checks:
+      - "Looking for getopt"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-t6ush7"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-t6ush7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_GETOPT"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-t6ush7'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_efa14/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_efa14.dir\\build.make CMakeFiles/cmTC_efa14.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-t6ush7'
+        Building C object CMakeFiles/cmTC_efa14.dir/CheckFunctionExists.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe   -DCHECK_FUNCTION_EXISTS=getopt -o CMakeFiles\\cmTC_efa14.dir\\CheckFunctionExists.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t6ush7\\CheckFunctionExists.c
+        Linking C executable cmTC_efa14.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_efa14.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_efa14.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_efa14.dir/objects.a @CMakeFiles\\cmTC_efa14.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe  -DCHECK_FUNCTION_EXISTS=getopt -Wl,--whole-archive CMakeFiles\\cmTC_efa14.dir/objects.a -Wl,--no-whole-archive -o cmTC_efa14.exe -Wl,--out-implib,libcmTC_efa14.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_efa14.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-t6ush7'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckTypeSize.cmake:318 (check_include_file)"
+      - "CMakeLists.txt:102 (check_type_size)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-auqrax"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-auqrax"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-auqrax'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_1eb47/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_1eb47.dir\\build.make CMakeFiles/cmTC_1eb47.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-auqrax'
+        Building C object CMakeFiles/cmTC_1eb47.dir/CheckIncludeFile.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe    -o CMakeFiles\\cmTC_1eb47.dir\\CheckIncludeFile.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auqrax\\CheckIncludeFile.c
+        Linking C executable cmTC_1eb47.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_1eb47.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_1eb47.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_1eb47.dir/objects.a @CMakeFiles\\cmTC_1eb47.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_1eb47.dir/objects.a -Wl,--no-whole-archive -o cmTC_1eb47.exe -Wl,--out-implib,libcmTC_1eb47.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_1eb47.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-auqrax'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckTypeSize.cmake:320 (check_include_file)"
+      - "CMakeLists.txt:102 (check_type_size)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-33vbzf"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-33vbzf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-33vbzf'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_81f27/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_81f27.dir\\build.make CMakeFiles/cmTC_81f27.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-33vbzf'
+        Building C object CMakeFiles/cmTC_81f27.dir/CheckIncludeFile.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe    -o CMakeFiles\\cmTC_81f27.dir\\CheckIncludeFile.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-33vbzf\\CheckIncludeFile.c
+        Linking C executable cmTC_81f27.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_81f27.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_81f27.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_81f27.dir/objects.a @CMakeFiles\\cmTC_81f27.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_81f27.dir/objects.a -Wl,--no-whole-archive -o cmTC_81f27.exe -Wl,--out-implib,libcmTC_81f27.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_81f27.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-33vbzf'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckTypeSize.cmake:212 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckTypeSize.cmake:339 (__check_type_size_impl)"
+      - "CMakeLists.txt:102 (check_type_size)"
+    checks:
+      - "Check size of uint32_t"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-41l7mr"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-41l7mr"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_SIZEOF_UINT32_T"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-41l7mr'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_345fd/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_345fd.dir\\build.make CMakeFiles/cmTC_345fd.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-41l7mr'
+        Building C object CMakeFiles/cmTC_345fd.dir/SIZEOF_UINT32_T.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe    -o CMakeFiles\\cmTC_345fd.dir\\SIZEOF_UINT32_T.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-41l7mr\\SIZEOF_UINT32_T.c
+        Linking C executable cmTC_345fd.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_345fd.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_345fd.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_345fd.dir/objects.a @CMakeFiles\\cmTC_345fd.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_345fd.dir/objects.a -Wl,--no-whole-archive -o cmTC_345fd.exe -Wl,--out-implib,libcmTC_345fd.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_345fd.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-41l7mr'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckTypeSize.cmake:212 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckTypeSize.cmake:339 (__check_type_size_impl)"
+      - "CMakeLists.txt:104 (check_type_size)"
+    checks:
+      - "Check size of unsigned int"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-i2e4w2"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-i2e4w2"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_SIZEOF_UNSIGNED_INT"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-i2e4w2'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_3e106/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_3e106.dir\\build.make CMakeFiles/cmTC_3e106.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-i2e4w2'
+        Building C object CMakeFiles/cmTC_3e106.dir/SIZEOF_UNSIGNED_INT.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe    -o CMakeFiles\\cmTC_3e106.dir\\SIZEOF_UNSIGNED_INT.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i2e4w2\\SIZEOF_UNSIGNED_INT.c
+        Linking C executable cmTC_3e106.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_3e106.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_3e106.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_3e106.dir/objects.a @CMakeFiles\\cmTC_3e106.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_3e106.dir/objects.a -Wl,--no-whole-archive -o cmTC_3e106.exe -Wl,--out-implib,libcmTC_3e106.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_3e106.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-i2e4w2'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckTypeSize.cmake:212 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckTypeSize.cmake:339 (__check_type_size_impl)"
+      - "CMakeLists.txt:105 (check_type_size)"
+    checks:
+      - "Check size of unsigned long"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-1dq6xe"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-1dq6xe"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_SIZEOF_UNSIGNED_LONG"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-1dq6xe'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_6f1e2/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_6f1e2.dir\\build.make CMakeFiles/cmTC_6f1e2.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-1dq6xe'
+        Building C object CMakeFiles/cmTC_6f1e2.dir/SIZEOF_UNSIGNED_LONG.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe    -o CMakeFiles\\cmTC_6f1e2.dir\\SIZEOF_UNSIGNED_LONG.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1dq6xe\\SIZEOF_UNSIGNED_LONG.c
+        Linking C executable cmTC_6f1e2.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_6f1e2.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_6f1e2.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_6f1e2.dir/objects.a @CMakeFiles\\cmTC_6f1e2.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_6f1e2.dir/objects.a -Wl,--no-whole-archive -o cmTC_6f1e2.exe -Wl,--out-implib,libcmTC_6f1e2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_6f1e2.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-1dq6xe'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "CMakeLists.txt:118 (try_compile)"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/build_fpclassify/CMakeFiles/CMakeTmp"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/build_fpclassify/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_FPCLASSIFY"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/build_fpclassify/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_bab0d/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_bab0d.dir\\build.make CMakeFiles/cmTC_bab0d.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/build_fpclassify/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_bab0d.dir/fpclassify.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe    -o CMakeFiles\\cmTC_bab0d.dir\\fpclassify.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\fpclassify.c
+        Linking C executable cmTC_bab0d.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_bab0d.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_bab0d.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_bab0d.dir/objects.a @CMakeFiles\\cmTC_bab0d.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_bab0d.dir/objects.a -Wl,--no-whole-archive -o cmTC_bab0d.exe -Wl,--out-implib,libcmTC_bab0d.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_bab0d.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/build_fpclassify/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "CMakeLists.txt:129 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAVE_THREAD_LOCAL_STORAGE"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-vszyww"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-vszyww"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_THREAD_LOCAL_STORAGE"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-vszyww'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_23ccf/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_23ccf.dir\\build.make CMakeFiles/cmTC_23ccf.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-vszyww'
+        Building C object CMakeFiles/cmTC_23ccf.dir/src.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe -DHAVE_THREAD_LOCAL_STORAGE   -o CMakeFiles\\cmTC_23ccf.dir\\src.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vszyww\\src.c
+        Linking C executable cmTC_23ccf.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_23ccf.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_23ccf.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_23ccf.dir/objects.a @CMakeFiles\\cmTC_23ccf.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_23ccf.dir/objects.a -Wl,--no-whole-archive -o cmTC_23ccf.exe -Wl,--out-implib,libcmTC_23ccf.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_23ccf.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-vszyww'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.0/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "CMakeLists.txt:129 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAVE_THREAD_LOCAL_STORAGE"
+    directories:
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-xvzaw4"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-xvzaw4"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/cmake"
+    buildResult:
+      variable: "HAVE_THREAD_LOCAL_STORAGE"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-xvzaw4'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/Enviornment/MinGW/bin/mingw32-make.exe -f Makefile cmTC_a479a/fast
+        D:/Enviornment/MinGW/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_a479a.dir\\build.make CMakeFiles/cmTC_a479a.dir/build
+        mingw32-make[1]: Entering directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-xvzaw4'
+        Building C object CMakeFiles/cmTC_a479a.dir/src.c.obj
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe -DHAVE_THREAD_LOCAL_STORAGE   -o CMakeFiles\\cmTC_a479a.dir\\src.c.obj -c D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xvzaw4\\src.c
+        D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\third_party\\nlopt\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xvzaw4\\src.c:2:5: warning: 'thread' attribute directive ignored [-Wattributes]
+            2 |     __declspec(thread) int tls;
+              |     ^~~~~~~~~~
+        Linking C executable cmTC_a479a.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_a479a.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_a479a.dir/objects.a
+        D:\\Enviornment\\MinGW\\bin\\ar.exe qc CMakeFiles\\cmTC_a479a.dir/objects.a @CMakeFiles\\cmTC_a479a.dir\\objects1.rsp
+        D:\\Enviornment\\MinGW\\bin\\gcc.exe -Wl,--whole-archive CMakeFiles\\cmTC_a479a.dir/objects.a -Wl,--no-whole-archive -o cmTC_a479a.exe -Wl,--out-implib,libcmTC_a479a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_a479a.dir\\linkLibs.rsp
+        mingw32-make[1]: Leaving directory 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/nlopt/build/CMakeFiles/CMakeScratch/TryCompile-xvzaw4'
+        
+      exitCode: 0
+...

@@ -1,0 +1,2 @@
+D:\Enviornment\MinGW\bin\ar.exe qc libtrac_ik.a CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.obj CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.obj CMakeFiles/trac_ik.dir/src/trac_ik.cpp.obj
+D:\Enviornment\MinGW\bin\ranlib.exe libtrac_ik.a

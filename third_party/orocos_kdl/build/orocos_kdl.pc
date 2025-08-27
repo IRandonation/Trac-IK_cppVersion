@@ -1,0 +1,10 @@
+prefix=${pcfiledir}/../..
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: orocos-kdl
+Description: The Orocos Kinematics and Dynamics Library 
+Requires: 
+Version: 1.5.2
+Libs: -L${libdir} -lorocos-kdl
+Cflags: -I${includedir}  -I"D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/orocos_kdl/eigen3"

@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build TRAC-IK Example with MinGW",
+      "type": "cppbuild",
+      "command": "D:/Enviornment/MinGW/bin/g++.exe",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\examples\\example.cpp",  // ✅ 指定要编译的文件
+        "-I", "D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\include",          // ✅ trac_ik.h 所在目录
+        "-L", "D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\build",
+        "-libtrac_ik",
+        "-o", "my_trac_ik_test.exe"
+      ],
+      "options": {
+        "cwd": "D:/Enviornment/MinGW/bin"  // 可保留，但通常不需要，除非依赖 gcc 在该路径
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "编译 TRAC-IK 的 example.cpp 并链接库"
+    }
+  ]
+}
