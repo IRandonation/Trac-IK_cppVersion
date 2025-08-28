@@ -22,7 +22,6 @@ namespace TRAC_IK {
         RotJoint, TransJoint, Continuous
     };
 
-
     /// A hybrid inverse kinematics solver that combines the KDL-TL and NLOPT-IK
     /// algorithms to provide fast and robust inverse kinematics solutions.
     class TRAC_IK {
@@ -84,12 +83,10 @@ namespace TRAC_IK {
             KDL::JntArray& q_out,
             const KDL::Twist&    _bounds);
 
-        /// Return the KDL solver used by TRAC-IK
         const std::unique_ptr<KDL::ChainIkSolverPos_TL>& getKDL() const { return kdl_solver_; }
-
-        /// Return the NLOPT solver used by TRAC-IK
         const std::unique_ptr<NLOPT_IK::NLOPT_IK>& getNLOPT() const { return nlopt_solver_; }
 
+        /// ✅ 并行求解入口（带误差验证 + 失败回退随机重启）
         int CartToJntParallel(
             const KDL::JntArray& q_init,
             const KDL::Frame& p_in,
@@ -115,15 +112,20 @@ namespace TRAC_IK {
         KDL::Twist bounds_;
         int progress_;
 
-        // Random number generator for random restarts
         std::default_random_engine rng_;
 
-        // Helper functions
         void randomize(KDL::JntArray& q);
         double manipulability(const KDL::JntArray& q);
         double manipulability2(const KDL::JntArray& q);
+
+        /// ✅ 新增：随机重启求解函数（用于并行求解失败后的回退）
+        int TryRandomRestarts(
+            const KDL::JntArray& q_init,
+            const KDL::Frame& p_in,
+            KDL::JntArray& q_out,
+            const KDL::Twist& bounds);
     };
 
 } // namespace TRAC_IK
 
-#endif
+#endif // TRAC_IK_HPP

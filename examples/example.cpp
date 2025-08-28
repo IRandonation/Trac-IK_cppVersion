@@ -114,8 +114,8 @@ int main(int argc, char** argv) {
                      KDL::Vector(0.01, 0.01, 0.01));      // 姿态容限
 
     auto start_time = std::chrono::high_resolution_clock::now();
-    int result = solver.CartToJnt(q_init, target_pose, q_out, bounds);
-    // int result = solver.CartToJntParallel(q_init, target_pose, q_out, bounds, 300.0);  // 300ms 超时
+    // int result = solver.CartToJnt(q_init, target_pose, q_out, bounds);
+    int result = solver.CartToJntParallel(q_init, target_pose, q_out, bounds, 300.0);  // 300ms 超时
 
     auto end_time = std::chrono::high_resolution_clock::now();
 
