@@ -1,62 +1,82 @@
-#ifndef KDLCHAINIKSOLVERPOS_TL_HPP
-#define KDLCHAINIKSOLVERPOS_TL_HPP
+#ifndef CHAIN_IK_SOLVER_POS_TL_H
+#define CHAIN_IK_SOLVER_POS_TL_H
+
+#include <kdl/chain.hpp>
+#include <kdl/jntarray.hpp>
+#include <kdl/frames.hpp>
+#include <kdl/chainfksolverpos_recursive.hpp>
+#include <kdl/chainiksolvervel_pinv.hpp>
 
 #include <random>
-#include "kdl_types.h"
-#include "chainfksolverpos_recursive.h"
-#include "chainjnttojacsolver.h"
-#include "chainiksolvervel_pinv.h"
+#include <cmath>
+#include <cassert>
+#include <vector>
+
+// 可选：引入 Eigen（推荐）
+#include <Eigen/Dense>
 
 namespace KDL {
 
-class ChainIkSolverPos_TL {
-public:
-    ChainIkSolverPos_TL(const Chain& chain,
-                        const JntArray& q_min,
-                        const JntArray& q_max,
-                        double eps = 1e-3,
-                        bool random_restart = false,
-                        bool try_jl_wrap = false);
+    // 关节类型枚举
+    enum BasicJointType {
+        RotJoint, TransJoint, Continuous
+    };
 
-    /*--------- 配置 ---------*/
-    void setBounds(const Twist& tol);
-    const Twist& bounds() const;
-    void setEps(double eps);
-    double eps() const;
+    class ChainIkSolverPos_TL {
+    public:
+        ChainIkSolverPos_TL(
+            const Chain& chain,
+            const JntArray& q_min,
+            const JntArray& q_max,
+            double eps = 1e-5,
+            bool random_restart = true,
+            bool try_jl_wrap = true);
 
-    /*--------- 迭代接口 ---------*/
-    void restart(const JntArray& q_init, const Frame& p_in);
-    void restart(const JntArray& q_init);
-    int step(int steps = 1);
-    const JntArray& qout() const;
+        void setBounds(const Twist& tol);
+        const Twist& bounds() const;
+        void setEps(double eps);
+        double eps() const;
 
-    /*--------- 一次性求解 ---------*/
-    int CartToJnt(const JntArray& q_init,
-                  const Frame& p_in,
-                  JntArray& q_out,
-                  const Twist& bounds = Twist::Zero());
+        void restart(const JntArray& q_init, const Frame& p_in);
+        void restart(const JntArray& q_init);
 
-    bool isConverged() const;
+        const JntArray& qout() const;
 
-private:
-    void randomize(JntArray& q);
-    void clamp(JntArray& q);
+        int CartToJnt(const JntArray& q_init, const Frame& p_in, JntArray& q_out, const Twist& bounds = Twist::Zero());
+        int step(int steps = 1);
 
-    /*--------- 成员 ---------*/
-    const Chain chain_;
-    JntArray joint_min_, joint_max_;
-    std::vector<KDL::BasicJointType> joint_types_;
-    std::default_random_engine rng_;
-    ChainIkSolverVel_pinv vik_solver_;
-    ChainFkSolverPos_recursive fk_solver_;
+    private:
+        Twist diff(const Frame& a, const Frame& b); // 计算相对位姿误差 Twist
+        static void Add(const JntArray& q1, const JntArray& dq, JntArray& q2); // q1 + dq -> q2
+        void clamp(JntArray& q); // 关节限位处理
+        void randomize(JntArray& q); // 随机初始化（用于随机重启）
 
-    Twist bounds_;
-    double eps_;
-    bool rr_, wrap_;
-    JntArray q_curr_, q_tmp_, delta_q_;
-    Frame f_target_, f_curr_;
-    bool done_;
-};
+        // 成员变量
+        const Chain& chain_;
+        const JntArray joint_min_;
+        const JntArray joint_max_;
+        ChainFkSolverPos_recursive fk_solver_;
+        ChainIkSolverVel_pinv vik_solver_;
+
+        JntArray q_curr_;
+        JntArray q_tmp_;
+        JntArray delta_q_;
+
+        double eps_;
+        bool rr_;   // random restart
+        bool wrap_; // wrap around joint limits
+        bool done_;
+
+        JntArray q_out_;
+
+        Twist bounds_;
+        Frame f_curr_;
+        Frame f_target_;
+
+        std::mt19937 rng_;
+        std::vector<BasicJointType> joint_types_;
+    };
 
 } // namespace KDL
-#endif
+
+#endif // CHAIN_IK_SOLVER_POS_TL_H

@@ -5,6 +5,9 @@
 #include <cmath>
 #include <limits>
 
+#include <Eigen/Dense>
+#include <Eigen/SVD>
+
 namespace TRAC_IK {
 
     TRAC_IK::TRAC_IK(
@@ -30,8 +33,8 @@ namespace TRAC_IK {
         for (size_t i = 0; i < chain_.segments.size(); i++) {
             std::string type = chain_.segments[i].getJoint().getTypeName();
             if (type.find("Rot") != std::string::npos) {
-                if (joint_max_(joint_types_.size()) >= std::numeric_limits<float>::max() &&
-                    joint_min_(joint_types_.size()) <= std::numeric_limits<float>::lowest())
+                if (joint_max_(i) >= std::numeric_limits<double>::infinity() ||
+                    joint_min_(i) <= -std::numeric_limits<double>::infinity())
                 {
                     joint_types_.push_back(KDL::BasicJointType::Continuous);
                 } else {
@@ -275,59 +278,53 @@ namespace TRAC_IK {
 
     double TRAC_IK::manipulability(const KDL::JntArray& q)
     {
-        // Compute manipulability measure as sqrt(det(J * J^T))
-        // This is a simplified implementation
-        
-        // Compute Jacobian
         KDL::Jacobian jac(chain_.getNrOfJoints());
         KDL::ChainJntToJacSolver jac_solver(chain_);
-        jac_solver.JntToJac(q, jac);
-        
-        // Compute J * J^T
-        double JJT[6][6] = {0};
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 6; j++) {
-                for (unsigned int k = 0; k < chain_.getNrOfJoints(); k++) {
-                    JJT[i][j] += jac(i, k) * jac(j, k);
-                }
-            }
-        }
-        
-        // Compute determinant (simplified for 6x6 matrix)
-        // In a real implementation, you would use a proper determinant calculation
-        double det = 1.0;
-        for (int i = 0; i < 6; i++) {
-            det *= JJT[i][i];
-        }
-        
-        return std::sqrt(std::abs(det));
+        if (jac_solver.JntToJac(q, jac) < 0) return 0.0;
+
+        Eigen::MatrixXd J(6, jac.columns());
+        for (unsigned int col = 0; col < jac.columns(); ++col)
+            for (int row = 0; row < 6; ++row)
+                J(row, col) = jac(row, col);
+
+        Eigen::JacobiSVD<Eigen::MatrixXd> svd(J, Eigen::ComputeFullU | Eigen::ComputeFullV);
+        Eigen::VectorXd sv = svd.singularValues();
+
+        double manip = 1.0;
+        for (int i = 0; i < sv.size(); ++i)
+            manip *= sv(i);
+        return std::sqrt(manip);  // 或者直接 return manip; （奇异值乘积）
     }
 
     double TRAC_IK::manipulability2(const KDL::JntArray& q)
     {
-        // Compute alternative manipulability measure as 1/cond(J)
-        // This is a simplified implementation
-        
-        // Compute Jacobian
+        // Compute Jacobian using KDL
         KDL::Jacobian jac(chain_.getNrOfJoints());
         KDL::ChainJntToJacSolver jac_solver(chain_);
-        jac_solver.JntToJac(q, jac);
-        
-        // Compute singular values (simplified)
-        // In a real implementation, you would use SVD
-        double J_norm = 0.0;
-        for (unsigned int i = 0; i < jac.getNrOfRows(); i++) {
-            for (unsigned int j = 0; j < jac.getNrOfColumns(); j++) {
-                J_norm += jac(i, j) * jac(i, j);
-            }
-        }
-        J_norm = std::sqrt(J_norm);
-        
-        // Approximate condition number
-        double min_sv = 1e-6; // Approximate minimum singular value
-        double max_sv = J_norm;  // Approximate maximum singular value
-        
-        return min_sv / max_sv;
+        if (jac_solver.JntToJac(q, jac) < 0) return 0.0;
+    
+        // Convert to Eigen
+        Eigen::MatrixXd J(6, jac.columns());
+        for (unsigned int col = 0; col < jac.columns(); ++col)
+            for (int row = 0; row < 6; ++row)
+                J(row, col) = jac(row, col);
+    
+        // Perform SVD
+        Eigen::JacobiSVD<Eigen::MatrixXd> svd(J, Eigen::ComputeFullU | Eigen::ComputeFullV);
+        Eigen::VectorXd sv = svd.singularValues();
+    
+        if (sv.size() == 0) return 0.0;
+    
+        double max_sv = sv(0);             // 最大奇异值
+        double min_sv = sv(sv.size() - 1); // 最小奇异值
+    
+        if (min_sv < 1e-10) min_sv = 1e-10; // 避免除以 0
+    
+        // 条件数 = λ_max / λ_min
+        double cond = max_sv / min_sv;
+    
+        // 可选：返回条件数的倒数，作为可操作性的一种度量
+        return 1.0 / cond;
     }
 
 } // namespace TRAC_IK

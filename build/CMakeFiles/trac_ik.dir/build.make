@@ -76,45 +76,45 @@ CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.obj: CMakeFiles/trac_ik.dir/includes_CXX.r
 CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.obj: D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/src/kdl_tl.cpp
 CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.obj: CMakeFiles/trac_ik.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.obj"
-	D:\Enviornment\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.obj -MF CMakeFiles\trac_ik.dir\src\kdl_tl.cpp.obj.d -o CMakeFiles\trac_ik.dir\src\kdl_tl.cpp.obj -c D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\kdl_tl.cpp
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.obj -MF CMakeFiles\trac_ik.dir\src\kdl_tl.cpp.obj.d -o CMakeFiles\trac_ik.dir\src\kdl_tl.cpp.obj -c D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\kdl_tl.cpp
 
 CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.i"
-	D:\Enviornment\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\kdl_tl.cpp > CMakeFiles\trac_ik.dir\src\kdl_tl.cpp.i
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\kdl_tl.cpp > CMakeFiles\trac_ik.dir\src\kdl_tl.cpp.i
 
 CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.s"
-	D:\Enviornment\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\kdl_tl.cpp -o CMakeFiles\trac_ik.dir\src\kdl_tl.cpp.s
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\kdl_tl.cpp -o CMakeFiles\trac_ik.dir\src\kdl_tl.cpp.s
 
 CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.obj: CMakeFiles/trac_ik.dir/flags.make
 CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.obj: CMakeFiles/trac_ik.dir/includes_CXX.rsp
 CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.obj: D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/src/nlopt_ik.cpp
 CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.obj: CMakeFiles/trac_ik.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.obj"
-	D:\Enviornment\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.obj -MF CMakeFiles\trac_ik.dir\src\nlopt_ik.cpp.obj.d -o CMakeFiles\trac_ik.dir\src\nlopt_ik.cpp.obj -c D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\nlopt_ik.cpp
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.obj -MF CMakeFiles\trac_ik.dir\src\nlopt_ik.cpp.obj.d -o CMakeFiles\trac_ik.dir\src\nlopt_ik.cpp.obj -c D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\nlopt_ik.cpp
 
 CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.i"
-	D:\Enviornment\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\nlopt_ik.cpp > CMakeFiles\trac_ik.dir\src\nlopt_ik.cpp.i
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\nlopt_ik.cpp > CMakeFiles\trac_ik.dir\src\nlopt_ik.cpp.i
 
 CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.s"
-	D:\Enviornment\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\nlopt_ik.cpp -o CMakeFiles\trac_ik.dir\src\nlopt_ik.cpp.s
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\nlopt_ik.cpp -o CMakeFiles\trac_ik.dir\src\nlopt_ik.cpp.s
 
 CMakeFiles/trac_ik.dir/src/trac_ik.cpp.obj: CMakeFiles/trac_ik.dir/flags.make
 CMakeFiles/trac_ik.dir/src/trac_ik.cpp.obj: CMakeFiles/trac_ik.dir/includes_CXX.rsp
 CMakeFiles/trac_ik.dir/src/trac_ik.cpp.obj: D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/src/trac_ik.cpp
 CMakeFiles/trac_ik.dir/src/trac_ik.cpp.obj: CMakeFiles/trac_ik.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/trac_ik.dir/src/trac_ik.cpp.obj"
-	D:\Enviornment\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trac_ik.dir/src/trac_ik.cpp.obj -MF CMakeFiles\trac_ik.dir\src\trac_ik.cpp.obj.d -o CMakeFiles\trac_ik.dir\src\trac_ik.cpp.obj -c D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\trac_ik.cpp
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trac_ik.dir/src/trac_ik.cpp.obj -MF CMakeFiles\trac_ik.dir\src\trac_ik.cpp.obj.d -o CMakeFiles\trac_ik.dir\src\trac_ik.cpp.obj -c D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\trac_ik.cpp
 
 CMakeFiles/trac_ik.dir/src/trac_ik.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/trac_ik.dir/src/trac_ik.cpp.i"
-	D:\Enviornment\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\trac_ik.cpp > CMakeFiles\trac_ik.dir\src\trac_ik.cpp.i
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\trac_ik.cpp > CMakeFiles\trac_ik.dir\src\trac_ik.cpp.i
 
 CMakeFiles/trac_ik.dir/src/trac_ik.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/trac_ik.dir/src/trac_ik.cpp.s"
-	D:\Enviornment\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\trac_ik.cpp -o CMakeFiles\trac_ik.dir\src\trac_ik.cpp.s
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\trac_ik.cpp -o CMakeFiles\trac_ik.dir\src\trac_ik.cpp.s
 
 # Object files for target trac_ik
 trac_ik_OBJECTS = \

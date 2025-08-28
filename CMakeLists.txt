@@ -9,6 +9,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
+
+# 设置MinGW编译器
+if(MINGW)
+    set(CMAKE_CXX_COMPILER g++)
+    set(CMAKE_C_COMPILER gcc)
+endif()
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -O3")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0")
 
@@ -31,6 +38,10 @@ set(KDL_INCLUDE_DIR "${KDL_ROOT_DIR}/src")
 set(KDL_LIB_DIR "${KDL_ROOT_DIR}/build/src")
 set(KDL_LIB orocos-kdl)
 
+# ---------- Eigen 路径 ----------
+set(EIGEN_ROOT_DIR "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/third_party/orocos_kdl/eigen3")
+set(EIGEN_INCLUDE_DIR "${EIGEN_ROOT_DIR}")
+
 # ---------- 源码 ----------
 set(LIB_SOURCES
     src/kdl_tl.cpp
@@ -38,12 +49,6 @@ set(LIB_SOURCES
     src/trac_ik.cpp
 )
 set(LIB_HEADERS
-    include/math3d.h
-    include/dual_quaternion.h
-    include/kdl_types.h
-    include/chainfksolverpos_recursive.h
-    include/chainjnttojacsolver.h
-    include/chainiksolvervel_pinv.h
     include/kdl_tl.h
     include/nlopt_ik.h
     include/trac_ik.h
@@ -55,6 +60,7 @@ target_include_directories(trac_ik PRIVATE
     ${NLOPT_HPP_DIR}
     ${NLOPT_H_DIR}
     ${KDL_INCLUDE_DIR}
+    ${EIGEN_INCLUDE_DIR}
 )
 target_link_directories(trac_ik PRIVATE 
     ${NLOPT_LIB_DIR}
@@ -73,6 +79,7 @@ target_include_directories(trac_ik_example PRIVATE
     ${NLOPT_HPP_DIR}
     ${NLOPT_H_DIR}
     ${KDL_INCLUDE_DIR}
+    ${EIGEN_INCLUDE_DIR}
 )
 
 # 4. trac_ik_example 的库路径

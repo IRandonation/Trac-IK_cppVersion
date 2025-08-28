@@ -6,11 +6,22 @@
 #include <memory>
 #include <random>
 
-#include "kdl_types.h"
+#include <kdl/chain.hpp>
+#include <kdl/jntarray.hpp>
+#include <kdl/frames.hpp>
+#include <kdl/jacobian.hpp>
+#include <kdl/chainjnttojacsolver.hpp>
+
 #include "kdl_tl.h"
 #include "nlopt_ik.h"
 
 namespace TRAC_IK {
+
+    // 关节类型枚举
+    enum BasicJointType {
+        RotJoint, TransJoint, Continuous
+    };
+
 
     /// A hybrid inverse kinematics solver that combines the KDL-TL and NLOPT-IK
     /// algorithms to provide fast and robust inverse kinematics solutions.

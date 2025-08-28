@@ -76,15 +76,15 @@ CMakeFiles/trac_ik_example.dir/examples/example.cpp.obj: CMakeFiles/trac_ik_exam
 CMakeFiles/trac_ik_example.dir/examples/example.cpp.obj: D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/examples/example.cpp
 CMakeFiles/trac_ik_example.dir/examples/example.cpp.obj: CMakeFiles/trac_ik_example.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/trac_ik_example.dir/examples/example.cpp.obj"
-	D:\Enviornment\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trac_ik_example.dir/examples/example.cpp.obj -MF CMakeFiles\trac_ik_example.dir\examples\example.cpp.obj.d -o CMakeFiles\trac_ik_example.dir\examples\example.cpp.obj -c D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\examples\example.cpp
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trac_ik_example.dir/examples/example.cpp.obj -MF CMakeFiles\trac_ik_example.dir\examples\example.cpp.obj.d -o CMakeFiles\trac_ik_example.dir\examples\example.cpp.obj -c D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\examples\example.cpp
 
 CMakeFiles/trac_ik_example.dir/examples/example.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/trac_ik_example.dir/examples/example.cpp.i"
-	D:\Enviornment\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\examples\example.cpp > CMakeFiles\trac_ik_example.dir\examples\example.cpp.i
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\examples\example.cpp > CMakeFiles\trac_ik_example.dir\examples\example.cpp.i
 
 CMakeFiles/trac_ik_example.dir/examples/example.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/trac_ik_example.dir/examples/example.cpp.s"
-	D:\Enviornment\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\examples\example.cpp -o CMakeFiles\trac_ik_example.dir\examples\example.cpp.s
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\examples\example.cpp -o CMakeFiles\trac_ik_example.dir\examples\example.cpp.s
 
 # Object files for target trac_ik_example
 trac_ik_example_OBJECTS = \
