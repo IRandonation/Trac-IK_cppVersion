@@ -4,6 +4,8 @@
 #include <iostream>
 #include <cmath>
 #include <limits>
+#include <future>
+#include <chrono>
 
 #include <Eigen/Dense>
 #include <Eigen/SVD>
@@ -308,23 +310,102 @@ namespace TRAC_IK {
         for (unsigned int col = 0; col < jac.columns(); ++col)
             for (int row = 0; row < 6; ++row)
                 J(row, col) = jac(row, col);
-    
+
         // Perform SVD
         Eigen::JacobiSVD<Eigen::MatrixXd> svd(J, Eigen::ComputeFullU | Eigen::ComputeFullV);
         Eigen::VectorXd sv = svd.singularValues();
-    
+
         if (sv.size() == 0) return 0.0;
-    
+
         double max_sv = sv(0);             // 最大奇异值
         double min_sv = sv(sv.size() - 1); // 最小奇异值
-    
+
         if (min_sv < 1e-10) min_sv = 1e-10; // 避免除以 0
-    
+
         // 条件数 = λ_max / λ_min
         double cond = max_sv / min_sv;
-    
+
         // 可选：返回条件数的倒数，作为可操作性的一种度量
         return 1.0 / cond;
+    }
+
+    int TRAC_IK::CartToJntParallel(
+        const KDL::JntArray& q_init,
+        const KDL::Frame& p_in,
+        KDL::JntArray& q_out,
+        const KDL::Twist& bounds,
+        double timeout_ms)
+    {
+        using namespace std::chrono;
+
+        // 1. 初始化结果变量
+        int best_result = -1;
+        KDL::JntArray best_q_out;
+        double best_error = std::numeric_limits<double>::max();
+
+        // 2. 启动异步任务：KDL 求解器
+        auto future_kdl = std::async(std::launch::async, [&]() -> std::pair<int, KDL::JntArray> {
+            KDL::JntArray q_kdl(q_init.rows());
+            int res = kdl_solver_->CartToJnt(q_init, p_in, q_kdl, bounds);
+            if (res == 0) {
+                return {res, q_kdl};
+            } else {
+                return {res, KDL::JntArray(q_init.rows())};  // 返回无效解
+            }
+        });
+
+        // 3. 启动异步任务：NLOPT 求解器
+        auto future_nlopt = std::async(std::launch::async, [&]() -> std::pair<int, KDL::JntArray> {
+            KDL::JntArray q_nlopt(q_init.rows());
+            int res = nlopt_solver_->CartToJnt(q_init, p_in, q_nlopt, bounds);
+            if (res == 0) {
+                return {res, q_nlopt};
+            } else {
+                return {res, KDL::JntArray(q_init.rows())};  // 返回无效解
+            }
+        });
+
+        // 4. 设定超时时间
+        auto start = high_resolution_clock::now();
+        bool kdl_ready = false, nlopt_ready = false;
+        std::pair<int, KDL::JntArray> result_kdl, result_nlopt;
+
+        // 5. 尝试获取 KDL 结果（带超时逻辑）
+        if (future_kdl.valid()) {
+            if (future_kdl.wait_for(milliseconds(static_cast<int>(timeout_ms))) == std::future_status::ready) {
+                result_kdl = future_kdl.get();
+                kdl_ready = true;
+                if (result_kdl.first == 0) {
+                    // 可以在这里计算误差，暂时假设 KDL 返回的就是可接受的
+                    best_result = result_kdl.first;
+                    best_q_out = result_kdl.second;
+                    return best_result;  // 直接返回 KDL 的解
+                }
+            }
+        }
+
+        // 6. 尝试获取 NLOPT 结果（带超时逻辑）
+        if (future_nlopt.valid()) {
+            if (future_nlopt.wait_for(milliseconds(static_cast<int>(timeout_ms))) == std::future_status::ready) {
+                result_nlopt = future_nlopt.get();
+                nlopt_ready = true;
+                if (result_nlopt.first == 0) {
+                    best_result = result_nlopt.first;
+                    best_q_out = result_nlopt.second;
+                    return best_result;  // 直接返回 NLOPT 的解
+                }
+            }
+        }
+
+        // 7. 如果两者都返回了，但都失败，则你可以选择：
+        //    - 继续走原来的随机重启逻辑
+        //    - 或者直接返回失败
+
+        // 8. （可选）如果你想进一步比较 KDL / NLOPT 的结果（比如谁快谁慢，谁误差小），可以在这做
+        //    但目前我们只返回最先成功的那个
+
+        // 9. 如果到这里还没有返回，说明两者都未成功，你可以选择：
+        return -1;  // 表示都失败了，你也可以调用原来的随机重启逻辑
     }
 
 } // namespace TRAC_IK

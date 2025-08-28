@@ -94,7 +94,13 @@ int main(int argc, char** argv) {
     // 5. 设置目标位姿（通过 FK 保证可达）
     KDL::Frame target_pose;
     KDL::ChainFkSolverPos_recursive fk(chain);
-    q_init(2) += 0.1;  // 微调关节2以保证可达性
+    q_init.resize(nj);  // 确保大小正确，nj 是关节数，比如 7
+    q_init(0) = 0.1;
+    q_init(1) = 1.0;
+    q_init(2) = 0.54;
+    q_init(3) = -0.32;
+    q_init(4) = 0.01;
+    q_init(5) = -1.2;    
     fk.JntToCart(q_init, target_pose);
 
     // ✅ 打印输入信息（使用辅助函数！）
@@ -109,6 +115,8 @@ int main(int argc, char** argv) {
 
     auto start_time = std::chrono::high_resolution_clock::now();
     int result = solver.CartToJnt(q_init, target_pose, q_out, bounds);
+    // int result = solver.CartToJntParallel(q_init, target_pose, q_out, bounds, 300.0);  // 300ms 超时
+
     auto end_time = std::chrono::high_resolution_clock::now();
 
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
@@ -167,6 +175,5 @@ int main(int argc, char** argv) {
         }
     }
 
-    std::cout << "\n注意：此示例直接构建 KDL::Chain，因为 utils.cpp 已弃用且无 ROS 时不可用。" << std::endl;
     return 0;
 }

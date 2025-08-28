@@ -90,6 +90,13 @@ namespace TRAC_IK {
         /// Return the NLOPT solver used by TRAC-IK
         const std::unique_ptr<NLOPT_IK::NLOPT_IK>& getNLOPT() const { return nlopt_solver_; }
 
+        int CartToJntParallel(
+            const KDL::JntArray& q_init,
+            const KDL::Frame& p_in,
+            KDL::JntArray& q_out,
+            const KDL::Twist& bounds,
+            double timeout_ms);
+
     private:
 
         const KDL::Chain& chain_;
