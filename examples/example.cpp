@@ -1,12 +1,14 @@
 #include <iostream>
 #include <chrono>
 #include <cmath>
+#include <vector>
+#include <algorithm>
+#include <iomanip>
+#include <random>
 
 #include "trac_ik.h"
 
-/**
- * @brief 创建一个简单的 7-DOF 机械臂模型
- */
+// 创建一个简单的 7-DOF 机械臂模型
 KDL::Chain create7DOFRobotArm() {
     KDL::Chain chain;
     
@@ -41,7 +43,7 @@ KDL::Chain create7DOFRobotArm() {
     return chain;
 }
 
-// ✅ 辅助函数：打印关节角度数组
+// 打印关节角度
 void printJntArray(const std::string& label, const KDL::JntArray& q) {
     std::cout << label << ": [";
     for (unsigned int i = 0; i < q.rows(); i++) {
@@ -51,7 +53,7 @@ void printJntArray(const std::string& label, const KDL::JntArray& q) {
     std::cout << "]" << std::endl;
 }
 
-// ✅ 辅助函数：打印位姿（位置 + RPY）
+// 打印位姿
 void printFrame(const std::string& label, const KDL::Frame& f) {
     std::cout << label << ":" << std::endl;
     std::cout << "  position: [" 
@@ -67,10 +69,141 @@ void printFrame(const std::string& label, const KDL::Frame& f) {
               << yaw << "] (rad)" << std::endl;
 }
 
-int main(int argc, char** argv) {
-    std::cout << "TRAC-IK example" << std::endl;
-    std::cout << "=============" << std::endl;
+// 压力测试统计
+struct TestStats {
+    std::string name;
+    int success_count;
+    int total_tests;
+    double total_time;
+    double min_time;
+    double max_time;
+    std::vector<double> all_times;
     
+    TestStats(const std::string& n) : name(n), success_count(0), total_tests(0),
+                                     total_time(0.0), min_time(1e9), max_time(0.0) {}
+    
+    void addResult(bool success, double time_us) {
+        total_tests++;
+        if (success) {
+            success_count++;
+        }
+        all_times.push_back(time_us);
+        total_time += time_us;
+        min_time = std::min(min_time, time_us);
+        max_time = std::max(max_time, time_us);
+    }
+    
+    void printStats() const {
+        double success_rate = (total_tests > 0) ? (100.0 * success_count / total_tests) : 0.0;
+        double avg_time = (success_count > 0) ? (total_time / success_count) : 0.0;
+        
+        std::cout << std::fixed << std::setprecision(2);
+        std::cout << name << ":\n";
+        std::cout << "  Success Rate: " << success_rate << "% (" << success_count << "/" << total_tests << ")\n";
+        std::cout << "  Average Time: " << avg_time << " us\n";
+        std::cout << "  Min Time: " << min_time << " us\n";
+        std::cout << "  Max Time: " << max_time << " us\n";
+        
+        if (success_count > 1) {
+            double variance = 0.0;
+            for (double time : all_times) {
+                variance += (time - avg_time) * (time - avg_time);
+            }
+            variance /= success_count;
+            double std_dev = sqrt(variance);
+            std::cout << "  Time Std Dev: " << std_dev << " us\n";
+        }
+        std::cout << std::endl;
+    }
+};
+
+// 压力测试函数（已修改：随机化 q_init 和通过 FK 生成 target_pose）
+void runStressTest(const KDL::Chain& chain, const KDL::JntArray& q_min,
+                   const KDL::JntArray& q_max, int test_count = 100) {
+    
+    std::cout << "\nStarting Stress Test - Each method tested " << test_count << " times with random q_init & target_pose\n";
+    std::cout << "========================================\n" << std::endl;
+
+    std::vector<TRAC_IK::TRAC_IK::SolveType> solve_types = {
+        TRAC_IK::TRAC_IK::Speed,
+        TRAC_IK::TRAC_IK::Distance,
+        TRAC_IK::TRAC_IK::Manip1,
+        TRAC_IK::TRAC_IK::Manip2
+    };
+    std::vector<std::string> solve_type_names = {
+        "Speed (Serial)",
+        "Distance (Serial)",
+        "Manip1 (Serial)",
+        "Manip2 (Serial)"
+    };
+
+    std::vector<TestStats> stats;
+    for (const auto& name : solve_type_names) {
+        stats.emplace_back(name);
+    }
+
+    unsigned int nj = chain.getNrOfJoints();
+    KDL::JntArray q_out(nj);
+    KDL::JntArray q_init(nj);
+
+    // 随机数生成器
+    std::default_random_engine generator;
+    std::uniform_real_distribution<double> distribution(-M_PI, M_PI);
+
+    for (size_t i = 0; i < solve_types.size(); i++) {
+        TRAC_IK::TRAC_IK solver(chain, q_min, q_max, 0.005, 1e-3, solve_types[i]);
+
+        for (int j = 0; j < test_count; j++) {
+            // 1. 随机生成初始关节角度 q_init ∈ [-π, π]
+            for (unsigned int k = 0; k < nj; k++) {
+                q_init(k) = distribution(generator);
+            }
+
+            // 2. 通过 FK 计算当前 q_init 对应的位姿，作为目标位姿 target_pose
+            KDL::ChainFkSolverPos_recursive fk(chain);
+            KDL::Frame target_pose;
+            fk.JntToCart(q_init, target_pose);
+            KDL::Twist bounds(KDL::Vector(0.001, 0.001, 0.001),   // 位置误差容限
+                             KDL::Vector(0.01, 0.01, 0.01));      // 旋转误差容限
+            // 3. 求解逆运动学：从 q_init（其实可以是任意值）到 target_pose
+            auto start_time = std::chrono::high_resolution_clock::now();
+
+
+            int result = solver.CartToJnt(q_init, target_pose, q_out, bounds);            
+            auto end_time = std::chrono::high_resolution_clock::now();
+
+            auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
+            bool success = (result >= 0);
+            stats[i].addResult(success, duration.count());
+        }
+    }
+
+    // 输出统计结果
+    std::cout << "Stress Test Results:\n";
+    std::cout << "==================\n" << std::endl;
+
+    for (const auto& stat : stats) {
+        stat.printStats();
+    }
+
+    // 找出成功率最高的方法
+    auto best_it = std::max_element(stats.begin(), stats.end(),
+        [](const TestStats& a, const TestStats& b) {
+            double a_rate = (a.total_tests > 0) ? (100.0 * a.success_count / a.total_tests) : 0.0;
+            double b_rate = (b.total_tests > 0) ? (100.0 * b.success_count / b.total_tests) : 0.0;
+            if (a_rate != b_rate) return a_rate < b_rate;
+            double a_avg = (a.success_count > 0) ? (a.total_time / a.success_count) : 1e9;
+            double b_avg = (b.success_count > 0) ? (b.total_time / b.success_count) : 1e9;
+            return a_avg > b_avg;
+        });
+
+    std::cout << "Recommended Method: " << best_it->name << std::endl;
+}
+
+int main(int argc, char** argv) {
+    std::cout << "TRAC-IK example (updated: no parallel, random q_init & target_pose in stress test)\n";
+    std::cout << "=============\n" << std::endl;
+
     // 1. 创建机械臂模型
     KDL::Chain chain = create7DOFRobotArm();
     unsigned int nj = chain.getNrOfJoints();
@@ -82,98 +215,30 @@ int main(int argc, char** argv) {
         q_max(i) = M_PI;
     }
 
-    // 3. 创建 TRAC-IK 求解器
+    // 3. （可选）单次求解测试（您可以根据需要保留或删除这部分）
+    /*
     TRAC_IK::TRAC_IK solver(chain, q_min, q_max, 0.005, 1e-3, TRAC_IK::TRAC_IK::Speed);
-
-    // 4. 设置初始关节角度
     KDL::JntArray q_init(nj);
-    for (unsigned int i = 0; i < nj; i++) {
-        q_init(i) = 0.0;
-    }
+    for (unsigned int i = 0; i < nj; i++) q_init(i) = 0.0;
 
-    // 5. 设置目标位姿（通过 FK 保证可达）
-    KDL::Frame target_pose;
+    KDL::Frame target_pose;  // 您可以手动设置一个目标，或通过 FK 设置
     KDL::ChainFkSolverPos_recursive fk(chain);
-    q_init.resize(nj);  // 确保大小正确，nj 是关节数，比如 7
-    q_init(0) = 0.1;
-    q_init(1) = 1.0;
-    q_init(2) = 0.54;
-    q_init(3) = -0.32;
-    q_init(4) = 0.01;
-    q_init(5) = -1.2;    
     fk.JntToCart(q_init, target_pose);
 
-    // ✅ 打印输入信息（使用辅助函数！）
-    std::cout << "RobotArm joints number: " << nj << std::endl;
-    printFrame("target pose", target_pose);
-    printJntArray("init pose", q_init);
-
-    // 6. 求解逆运动学
     KDL::JntArray q_out(nj);
-    KDL::Twist bounds(KDL::Vector(0.001, 0.001, 0.001),   // 位置容限
-                     KDL::Vector(0.01, 0.01, 0.01));      // 姿态容限
+    KDL::Twist bounds(KDL::Vector(0.001, 0.001, 0.001), KDL::Vector(0.01, 0.01, 0.01));
 
-    auto start_time = std::chrono::high_resolution_clock::now();
-    // int result = solver.CartToJnt(q_init, target_pose, q_out, bounds);
-    int result = solver.CartToJntParallel(q_init, target_pose, q_out, bounds, 300.0);  // 300ms 超时
+    int result = solver.CartToJnt(q_init, target_pose, q_out, bounds);
 
-    auto end_time = std::chrono::high_resolution_clock::now();
-
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
-
-    // 7. 输出结果
     if (result >= 0) {
-        std::cout << "Find solution!" << std::endl;
-        std::cout << "calculate time: " << duration.count() << " us" << std::endl;
-
-        printJntArray("joint pose output", q_out);
-
-        // 正向验证
-        KDL::ChainFkSolverPos_recursive fk_solver(chain);
-        KDL::Frame computed_pose;
-        fk_solver.JntToCart(q_out, computed_pose);
-
-        printFrame("calculate pose", computed_pose);
-
-        // 误差
-        KDL::Twist error = KDL::diff(computed_pose, target_pose);
-        std::cout << "position error (m): " << error.vel.Norm() << std::endl;
-        std::cout << "pose error (rad): " << error.rot.Norm() << std::endl;
-
+        printJntArray("solution", q_out);
     } else {
-        std::cout << "no solution!" << std::endl;
-        std::cout << "calculate time: " << duration.count() << " us" << std::endl;
+        std::cout << "No solution found." << std::endl;
     }
+    */
 
-    // 8. 测试不同求解策略
-    std::cout << "\ntest different trajectory:" << std::endl;
-    std::vector<TRAC_IK::TRAC_IK::SolveType> solve_types = {
-        TRAC_IK::TRAC_IK::Speed,
-        TRAC_IK::TRAC_IK::Distance,
-        TRAC_IK::TRAC_IK::Manip1,
-        TRAC_IK::TRAC_IK::Manip2
-    };
-    std::vector<std::string> solve_type_names = {
-        "speed first",
-        "distance first",
-        "multiple1",
-        "multiple2"
-    };
-
-    for (size_t i = 0; i < solve_types.size(); i++) {
-        TRAC_IK::TRAC_IK test_solver(chain, q_min, q_max, 0.005, 1e-3, solve_types[i]);
-        start_time = std::chrono::high_resolution_clock::now();
-        result = test_solver.CartToJnt(q_init, target_pose, q_out, bounds);
-        end_time = std::chrono::high_resolution_clock::now();
-        duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
-
-        std::cout << solve_type_names[i] << ": ";
-        if (result >= 0) {
-            std::cout << "success (" << duration.count() << " us)" << std::endl;
-        } else {
-            std::cout << "fail (" << duration.count() << " us)" << std::endl;
-        }
-    }
+    // 4. 压力测试：随机 q_init 和随机（但可达的）target_pose
+    runStressTest(chain, q_min, q_max, 100);  // 100 次测试
 
     return 0;
 }
