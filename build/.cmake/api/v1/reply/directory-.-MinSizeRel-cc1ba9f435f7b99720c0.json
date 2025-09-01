@@ -17,7 +17,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 75,
+				"line" : 91,
 				"parent" : 0
 			}
 		]
@@ -30,7 +30,7 @@
 			"destination" : "lib",
 			"paths" : 
 			[
-				"Debug/trac_ik.lib"
+				"MinSizeRel/trac_ik.lib"
 			],
 			"targetId" : "trac_ik::@6890427a1f51a3e7e1df",
 			"targetIndex" : 2,
@@ -42,10 +42,22 @@
 			"destination" : "bin",
 			"paths" : 
 			[
-				"Debug/trac_ik_example.exe"
+				"MinSizeRel/trac_ik_example.exe"
 			],
 			"targetId" : "trac_ik_example::@6890427a1f51a3e7e1df",
 			"targetIndex" : 3,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "bin",
+			"paths" : 
+			[
+				"MinSizeRel/urdf.exe"
+			],
+			"targetId" : "urdf::@6890427a1f51a3e7e1df",
+			"targetIndex" : 4,
 			"type" : "target"
 		}
 	],

@@ -1278,6 +1278,18 @@
 			"value" : "D:/Enviornment/vcpkg/installed"
 		},
 		{
+			"name" : "console_bridge_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for console_bridge."
+				}
+			],
+			"type" : "PATH",
+			"value" : "D:/Enviornment/vcpkg/installed/x64-windows/share/console_bridge"
+		},
+		{
 			"name" : "nlopt_DIR",
 			"properties" : 
 			[
@@ -1312,6 +1324,42 @@
 			],
 			"type" : "STATIC",
 			"value" : "general;NLopt::nlopt;general;orocos-kdl;"
+		},
+		{
+			"name" : "urdfdom_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for urdfdom."
+				}
+			],
+			"type" : "PATH",
+			"value" : "D:/Enviornment/vcpkg/installed/x64-windows/share/urdfdom"
+		},
+		{
+			"name" : "urdfdom_headers_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for urdfdom_headers."
+				}
+			],
+			"type" : "PATH",
+			"value" : "D:/Enviornment/vcpkg/installed/x64-windows/share/urdfdom_headers"
+		},
+		{
+			"name" : "yaml-cpp_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for yaml-cpp."
+				}
+			],
+			"type" : "PATH",
+			"value" : "D:/Enviornment/vcpkg/installed/x64-windows/share/yaml-cpp"
 		}
 	],
 	"kind" : "cache",

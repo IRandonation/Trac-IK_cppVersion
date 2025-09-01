@@ -1,18 +1,11 @@
 {
-	"archive" : 
-	{
-		"commandFragments" : 
-		[
-			{
-				"fragment" : "/machine:x64",
-				"role" : "flags"
-			}
-		]
-	},
 	"artifacts" : 
 	[
 		{
-			"path" : "MinSizeRel/trac_ik.lib"
+			"path" : "Debug/trac_ik_example.exe"
+		},
+		{
+			"path" : "Debug/trac_ik_example.pdb"
 		}
 	],
 	"backtrace" : 2,
@@ -20,11 +13,10 @@
 	{
 		"commands" : 
 		[
-			"_add_library",
-			"add_library",
+			"_add_executable",
+			"add_executable",
 			"install",
-			"target_link_libraries",
-			"target_include_directories"
+			"target_link_libraries"
 		],
 		"files" : 
 		[
@@ -39,31 +31,25 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 34,
+				"line" : 65,
 				"parent" : 0
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 641,
+				"line" : 600,
 				"parent" : 1
 			},
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 75,
+				"line" : 91,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 53,
-				"parent" : 0
-			},
-			{
-				"command" : 4,
-				"file" : 1,
-				"line" : 37,
+				"line" : 68,
 				"parent" : 0
 			}
 		]
@@ -74,7 +60,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG -std:c++14"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++14"
 				}
 			],
 			"defines" : 
@@ -87,12 +73,8 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 5,
+					"backtrace" : 4,
 					"path" : "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/src"
 				},
 				{
 					"backtrace" : 4,
@@ -116,26 +98,28 @@
 			},
 			"sourceIndexes" : 
 			[
-				0,
-				1,
-				2
+				0
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
+			"backtrace" : 4,
+			"id" : "trac_ik::@6890427a1f51a3e7e1df"
+		},
+		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "trac_ik::@6890427a1f51a3e7e1df",
+	"id" : "trac_ik_example::@6890427a1f51a3e7e1df",
 	"install" : 
 	{
 		"destinations" : 
 		[
 			{
 				"backtrace" : 3,
-				"path" : "lib"
+				"path" : "bin"
 			}
 		],
 		"prefix" : 
@@ -143,8 +127,46 @@
 			"path" : "C:/Program Files/TRAC_IK"
 		}
 	},
-	"name" : "trac_ik",
-	"nameOnDisk" : "trac_ik.lib",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/machine:x64 /debug /INCREMENTAL",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/subsystem:console",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "Debug\\trac_ik.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "D:\\Enviornment\\vcpkg\\installed\\x64-windows\\debug\\lib\\nlopt.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "D:\\Enviornment\\vcpkg\\installed\\x64-windows\\debug\\lib\\orocos-kdld.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "trac_ik_example",
+	"nameOnDisk" : "trac_ik_example.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -156,18 +178,7 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0,
-				1,
-				2
-			]
-		},
-		{
-			"name" : "Header Files",
-			"sourceIndexes" : 
-			[
-				3,
-				4,
-				5
+				0
 			]
 		}
 	],
@@ -176,36 +187,9 @@
 		{
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
-			"path" : "src/kdl_tl.cpp",
+			"path" : "examples/example.cpp",
 			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 2,
-			"compileGroupIndex" : 0,
-			"path" : "src/nlopt_ik.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 2,
-			"compileGroupIndex" : 0,
-			"path" : "src/trac_ik.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 2,
-			"path" : "include/kdl_tl.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 2,
-			"path" : "include/nlopt_ik.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 2,
-			"path" : "include/trac_ik.h",
-			"sourceGroupIndex" : 1
 		}
 	],
-	"type" : "STATIC_LIBRARY"
+	"type" : "EXECUTABLE"
 }

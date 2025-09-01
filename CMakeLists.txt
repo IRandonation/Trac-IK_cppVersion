@@ -45,6 +45,9 @@ target_include_directories(trac_ik
 find_package(nlopt REQUIRED)
 find_package(orocos_kdl REQUIRED)
 find_package(Eigen3 REQUIRED)
+find_package(urdfdom_headers REQUIRED)
+find_package(urdfdom REQUIRED)
+find_package(yaml-cpp CONFIG REQUIRED)
 
 # 如果你使用了 Boost 的某些组件，比如 system, filesystem，也可以加上：
 # find_package(Boost REQUIRED COMPONENTS system filesystem)
@@ -71,8 +74,21 @@ target_link_libraries(trac_ik_example
         # Boost::system Boost::filesystem
 )
 
+# 7. 添加 urdf 可执行文件
+add_executable(urdf examples/urdf.cpp)
+target_include_directories(urdf
+    PRIVATE
+        ${urdfdom_headers_INCLUDE_DIRS}
+        ${urdfdom_INCLUDE_DIRS}
+)
+target_link_libraries(urdf
+    PRIVATE
+        urdfdom::urdfdom_model
+        yaml-cpp::yaml-cpp
+)
+
 # ---------- 安装规则（可选）----------
-install(TARGETS trac_ik trac_ik_example
+install(TARGETS trac_ik trac_ik_example urdf
         RUNTIME DESTINATION bin
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib

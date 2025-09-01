@@ -1,0 +1,232 @@
+links:
+  base_link:
+    name: base_link
+    inertial:
+      mass: 0.5
+      origin:
+        position:
+          x: 0
+          y: 0
+          z: 0
+        orientation:
+          x: 0
+          y: 0
+          z: 0
+          w: 1
+      inertia:
+        ixx: 0.001
+        ixy: 0
+        ixz: 0
+        iyy: 0.001
+        iyz: 0
+        izz: 0.001
+    visual:
+      origin:
+        position:
+          x: 0
+          y: 0
+          z: 0
+        orientation:
+          x: 0
+          y: 0
+          z: 0
+          w: 1
+      geometry:
+        type: cylinder
+        radius: 0.050000000000000003
+        length: 0.10000000000000001
+      material:
+        name: blue
+        color:
+          r: 0.200000003
+          g: 0.200000003
+          b: 1
+          a: 1
+    collision:
+      origin:
+        position:
+          x: 0
+          y: 0
+          z: 0
+        orientation:
+          x: 0
+          y: 0
+          z: 0
+          w: 1
+      geometry:
+        type: cylinder
+        radius: 0.050000000000000003
+        length: 0.10000000000000001
+  link1:
+    name: link1
+    inertial:
+      mass: 0.29999999999999999
+      origin:
+        position:
+          x: 0.10000000000000001
+          y: 0
+          z: 0
+        orientation:
+          x: 0
+          y: 0
+          z: 0
+          w: 1
+      inertia:
+        ixx: 0.001
+        ixy: 0
+        ixz: 0
+        iyy: 0.001
+        iyz: 0
+        izz: 0.001
+    visual:
+      origin:
+        position:
+          x: 0.10000000000000001
+          y: 0
+          z: 0
+        orientation:
+          x: 0
+          y: 0
+          z: 0
+          w: 1
+      geometry:
+        type: box
+        size:
+          x: 0.20000000000000001
+          y: 0.029999999999999999
+          z: 0.029999999999999999
+      material:
+        name: red
+        color:
+          r: 1
+          g: 0.200000003
+          b: 0.200000003
+          a: 1
+    collision:
+      origin:
+        position:
+          x: 0.10000000000000001
+          y: 0
+          z: 0
+        orientation:
+          x: 0
+          y: 0
+          z: 0
+          w: 1
+      geometry:
+        type: box
+        size:
+          x: 0.20000000000000001
+          y: 0.029999999999999999
+          z: 0.029999999999999999
+  link2:
+    name: link2
+    inertial:
+      mass: 0.20000000000000001
+      origin:
+        position:
+          x: 0.10000000000000001
+          y: 0
+          z: 0
+        orientation:
+          x: 0
+          y: 0
+          z: 0
+          w: 1
+      inertia:
+        ixx: 0.00050000000000000001
+        ixy: 0
+        ixz: 0
+        iyy: 0.00050000000000000001
+        iyz: 0
+        izz: 0.00050000000000000001
+    visual:
+      origin:
+        position:
+          x: 0.10000000000000001
+          y: 0
+          z: 0
+        orientation:
+          x: 0
+          y: 0
+          z: 0
+          w: 1
+      geometry:
+        type: box
+        size:
+          x: 0.20000000000000001
+          y: 0.029999999999999999
+          z: 0.029999999999999999
+      material:
+        name: blue
+        color:
+          r: 0.200000003
+          g: 0.200000003
+          b: 1
+          a: 1
+    collision:
+      origin:
+        position:
+          x: 0.10000000000000001
+          y: 0
+          z: 0
+        orientation:
+          x: 0
+          y: 0
+          z: 0
+          w: 1
+      geometry:
+        type: box
+        size:
+          x: 0.20000000000000001
+          y: 0.029999999999999999
+          z: 0.029999999999999999
+joints:
+  joint1:
+    name: joint1
+    type: revolute
+    parent: base_link
+    child: link1
+    origin:
+      position:
+        x: 0
+        y: 0
+        z: 0.050000000000000003
+      orientation:
+        x: 0
+        y: 0
+        z: 0
+        w: 1
+    axis:
+      x: 0
+      y: 0
+      z: 1
+    limits:
+      lower: -1.5700000000000001
+      upper: 1.5700000000000001
+      effort: 10
+      velocity: 2
+  joint2:
+    name: joint2
+    type: revolute
+    parent: link1
+    child: link2
+    origin:
+      position:
+        x: 0.20000000000000001
+        y: 0
+        z: 0
+      orientation:
+        x: 0
+        y: 0
+        z: 0
+        w: 1
+    axis:
+      x: 0
+      y: 0
+      z: 1
+    limits:
+      lower: -1.5700000000000001
+      upper: 1.5700000000000001
+      effort: 10
+      velocity: 2

@@ -249,6 +249,9 @@ Z_VCPKG_PWSH_PATH:FILEPATH=Z_VCPKG_PWSH_PATH-NOTFOUND
 // triplet
 _VCPKG_INSTALLED_DIR:PATH=D:/Enviornment/vcpkg/installed
 
+//The directory containing a CMake configuration file for console_bridge.
+console_bridge_DIR:PATH=D:/Enviornment/vcpkg/installed/x64-windows/share/console_bridge
+
 //The directory containing a CMake configuration file for nlopt.
 nlopt_DIR:PATH=D:/Enviornment/vcpkg/installed/x64-windows/share/nlopt
 
@@ -257,6 +260,15 @@ orocos_kdl_DIR:PATH=D:/Enviornment/vcpkg/installed/x64-windows/share/orocos_kdl
 
 //Dependencies for the target
 trac_ik_LIB_DEPENDS:STATIC=general;NLopt::nlopt;general;orocos-kdl;
+
+//The directory containing a CMake configuration file for urdfdom.
+urdfdom_DIR:PATH=D:/Enviornment/vcpkg/installed/x64-windows/share/urdfdom
+
+//The directory containing a CMake configuration file for urdfdom_headers.
+urdfdom_headers_DIR:PATH=D:/Enviornment/vcpkg/installed/x64-windows/share/urdfdom_headers
+
+//The directory containing a CMake configuration file for yaml-cpp.
+yaml-cpp_DIR:PATH=D:/Enviornment/vcpkg/installed/x64-windows/share/yaml-cpp
 
 
 ########################
