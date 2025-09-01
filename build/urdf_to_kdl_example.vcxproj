@@ -3,9 +3,6 @@
   <PropertyGroup>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
-  <PropertyGroup>
-    <ResolveNugetPackages>false</ResolveNugetPackages>
-  </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
@@ -25,31 +22,32 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3875BD76-A079-3E1E-ADCB-ABDB0D7782D2}</ProjectGuid>
+    <ProjectGuid>{6DAFD9DA-A798-3713-9BCB-7F2990153BB4}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
+    <VcpkgEnabled>false</VcpkgEnabled>
     <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
-    <ProjectName>ALL_BUILD</ProjectName>
+    <ProjectName>urdf_to_kdl_example</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Utility</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Utility</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
-    <ConfigurationType>Utility</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
-    <ConfigurationType>Utility</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
@@ -57,55 +55,281 @@
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
   <ImportGroup Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="do_not_import_user.props" Condition="exists('do_not_import_user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">urdf_to_kdl_example.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">urdf_to_kdl_example</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">urdf_to_kdl_example.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">urdf_to_kdl_example</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">urdf_to_kdl_example.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">urdf_to_kdl_example</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">urdf_to_kdl_example.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">urdf_to_kdl_example</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/Enviornment/vcpkg/installed/x64-windows/include" /external:I "D:/Enviornment/vcpkg/installed/x64-windows/include/eigen3" /external:I "D:/Enviornment/vcpkg/installed/x64-windows/include/urdfdom" /external:I "D:/Enviornment/vcpkg/installed/x64-windows/include/urdfdom_headers"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NLOPT_DLL;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;NLOPT_DLL;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include;D:\Enviornment\vcpkg\installed\x64-windows\include;D:\Enviornment\vcpkg\installed\x64-windows\include\eigen3;D:\Enviornment\vcpkg\installed\x64-windows\include\urdfdom;D:\Enviornment\vcpkg\installed\x64-windows\include\urdfdom_headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include;D:\Enviornment\vcpkg\installed\x64-windows\include;D:\Enviornment\vcpkg\installed\x64-windows\include\eigen3;D:\Enviornment\vcpkg\installed\x64-windows\include\urdfdom;D:\Enviornment\vcpkg\installed\x64-windows\include\urdfdom_headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file D:/Enviornment/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/Debug/urdf_to_kdl_example.exe -installedDir D:/Enviornment/vcpkg/installed/x64-windows/debug/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>Debug\trac_ik.lib;D:\Enviornment\vcpkg\installed\x64-windows\debug\lib\nlopt.lib;D:\Enviornment\vcpkg\installed\x64-windows\debug\lib\orocos-kdld.lib;D:\Enviornment\vcpkg\installed\x64-windows\debug\lib\urdfdom_model.lib;D:\Enviornment\vcpkg\installed\x64-windows\debug\lib\yaml-cppd.lib;D:\Enviornment\vcpkg\installed\x64-windows\debug\lib\console_bridge.lib;D:\Enviornment\vcpkg\installed\x64-windows\debug\lib\tinyxml.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/Debug/urdf_to_kdl_example.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/Debug/urdf_to_kdl_example.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/Enviornment/vcpkg/installed/x64-windows/include" /external:I "D:/Enviornment/vcpkg/installed/x64-windows/include/eigen3" /external:I "D:/Enviornment/vcpkg/installed/x64-windows/include/urdfdom" /external:I "D:/Enviornment/vcpkg/installed/x64-windows/include/urdfdom_headers"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NLOPT_DLL;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NLOPT_DLL;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include;D:\Enviornment\vcpkg\installed\x64-windows\include;D:\Enviornment\vcpkg\installed\x64-windows\include\eigen3;D:\Enviornment\vcpkg\installed\x64-windows\include\urdfdom;D:\Enviornment\vcpkg\installed\x64-windows\include\urdfdom_headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include;D:\Enviornment\vcpkg\installed\x64-windows\include;D:\Enviornment\vcpkg\installed\x64-windows\include\eigen3;D:\Enviornment\vcpkg\installed\x64-windows\include\urdfdom;D:\Enviornment\vcpkg\installed\x64-windows\include\urdfdom_headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file D:/Enviornment/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/Release/urdf_to_kdl_example.exe -installedDir D:/Enviornment/vcpkg/installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>Release\trac_ik.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\nlopt.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\orocos-kdl.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\urdfdom_model.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\yaml-cpp.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\console_bridge.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\tinyxml.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/Release/urdf_to_kdl_example.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/Release/urdf_to_kdl_example.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/Enviornment/vcpkg/installed/x64-windows/include" /external:I "D:/Enviornment/vcpkg/installed/x64-windows/include/eigen3" /external:I "D:/Enviornment/vcpkg/installed/x64-windows/include/urdfdom" /external:I "D:/Enviornment/vcpkg/installed/x64-windows/include/urdfdom_headers"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NLOPT_DLL;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NLOPT_DLL;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include;D:\Enviornment\vcpkg\installed\x64-windows\include;D:\Enviornment\vcpkg\installed\x64-windows\include\eigen3;D:\Enviornment\vcpkg\installed\x64-windows\include\urdfdom;D:\Enviornment\vcpkg\installed\x64-windows\include\urdfdom_headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include;D:\Enviornment\vcpkg\installed\x64-windows\include;D:\Enviornment\vcpkg\installed\x64-windows\include\eigen3;D:\Enviornment\vcpkg\installed\x64-windows\include\urdfdom;D:\Enviornment\vcpkg\installed\x64-windows\include\urdfdom_headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file D:/Enviornment/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/MinSizeRel/urdf_to_kdl_example.exe -installedDir D:/Enviornment/vcpkg/installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>MinSizeRel\trac_ik.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\nlopt.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\orocos-kdl.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\urdfdom_model.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\yaml-cpp.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\console_bridge.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\tinyxml.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/MinSizeRel/urdf_to_kdl_example.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/MinSizeRel/urdf_to_kdl_example.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/Enviornment/vcpkg/installed/x64-windows/include" /external:I "D:/Enviornment/vcpkg/installed/x64-windows/include/eigen3" /external:I "D:/Enviornment/vcpkg/installed/x64-windows/include/urdfdom" /external:I "D:/Enviornment/vcpkg/installed/x64-windows/include/urdfdom_headers"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NLOPT_DLL;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NLOPT_DLL;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include;D:\Enviornment\vcpkg\installed\x64-windows\include;D:\Enviornment\vcpkg\installed\x64-windows\include\eigen3;D:\Enviornment\vcpkg\installed\x64-windows\include\urdfdom;D:\Enviornment\vcpkg\installed\x64-windows\include\urdfdom_headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include;D:\Enviornment\vcpkg\installed\x64-windows\include;D:\Enviornment\vcpkg\installed\x64-windows\include\eigen3;D:\Enviornment\vcpkg\installed\x64-windows\include\urdfdom;D:\Enviornment\vcpkg\installed\x64-windows\include\urdfdom_headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file D:/Enviornment/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/RelWithDebInfo/urdf_to_kdl_example.exe -installedDir D:/Enviornment/vcpkg/installed/x64-windows/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>RelWithDebInfo\trac_ik.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\nlopt.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\orocos-kdl.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\urdfdom_model.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\yaml-cpp.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\console_bridge.lib;D:\Enviornment\vcpkg\installed\x64-windows\lib\tinyxml.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/RelWithDebInfo/urdf_to_kdl_example.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/RelWithDebInfo/urdf_to_kdl_example.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
     <CustomBuild Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\CMakeLists.txt">
@@ -165,6 +389,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\examples\urdf_to_kdl_example.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -177,18 +402,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ProjectReference Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\build\trac_ik.vcxproj">
       <Project>{66A15F8D-9A9E-3112-A1CE-9DAF53886697}</Project>
       <Name>trac_ik</Name>
-    </ProjectReference>
-    <ProjectReference Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\build\trac_ik_example.vcxproj">
-      <Project>{1E7AE516-023F-325F-8620-0B6C6F54B418}</Project>
-      <Name>trac_ik_example</Name>
-    </ProjectReference>
-    <ProjectReference Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\build\urdf.vcxproj">
-      <Project>{05DC86DC-59FF-3FB4-BA8C-EA07A3F06D86}</Project>
-      <Name>urdf</Name>
-    </ProjectReference>
-    <ProjectReference Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\build\urdf_to_kdl_example.vcxproj">
-      <Project>{6DAFD9DA-A798-3713-9BCB-7F2990153BB4}</Project>
-      <Name>urdf_to_kdl_example</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

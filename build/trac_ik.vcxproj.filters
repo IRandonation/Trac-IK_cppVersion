@@ -10,6 +10,9 @@
     <ClCompile Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\trac_ik.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\urdf_kdl_converter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include\kdl_tl.h">
@@ -19,6 +22,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include\trac_ik.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include\urdf_kdl_converter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

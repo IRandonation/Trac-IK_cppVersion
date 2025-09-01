@@ -24,7 +24,7 @@ events:
       The output was:
       0
       閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.14.10+8b8e13593
-      鐢熸垚鍚姩鏃堕棿涓?2025/9/1 12:16:29銆?
+      鐢熸垚鍚姩鏃堕棿涓?2025/9/1 21:31:08銆?
       
       鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\build\\CMakeFiles\\4.0.2\\CompilerIdCXX\\CompilerIdCXX.vcxproj鈥?榛樿鐩爣)銆?
       PrepareForBuild:
@@ -62,7 +62,7 @@ events:
           0 涓鍛?
           0 涓敊璇?
       
-      宸茬敤鏃堕棿 00:00:02.34
+      宸茬敤鏃堕棿 00:00:01.76
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -81,8 +81,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/CMakeFiles/CMakeScratch/TryCompile-phrdcw"
-      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/CMakeFiles/CMakeScratch/TryCompile-phrdcw"
+      source: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/CMakeFiles/CMakeScratch/TryCompile-vfgund"
+      binary: "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/CMakeFiles/CMakeScratch/TryCompile-vfgund"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -96,40 +96,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/CMakeFiles/CMakeScratch/TryCompile-phrdcw'
+        Change Dir: 'D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/CMakeFiles/CMakeScratch/TryCompile-vfgund'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_ab996.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_0d4f6.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.14.10+8b8e13593
-        鐢熸垚鍚姩鏃堕棿涓?2025/9/1 12:16:32銆?
+        鐢熸垚鍚姩鏃堕棿涓?2025/9/1 21:31:10銆?
         
-        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-phrdcw\\cmTC_ab996.vcxproj鈥?榛樿鐩爣)銆?
+        鑺傜偣 1 涓婄殑椤圭洰鈥淒:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vfgund\\cmTC_0d4f6.vcxproj鈥?榛樿鐩爣)銆?
         PrepareForBuild:
-          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_ab996.dir\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_0d4f6.dir\\Debug\\鈥濄€?
           宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
-          姝ｅ湪鍒涘缓鐩綍鈥淒:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-phrdcw\\Debug\\鈥濄€?
-          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_ab996.dir\\Debug\\cmTC_ab996.tlog\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥淒:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vfgund\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_0d4f6.dir\\Debug\\cmTC_0d4f6.tlog\\鈥濄€?
         InitializeBuildStatus:
-          姝ｅ湪鍒涘缓鈥渃mTC_ab996.dir\\Debug\\cmTC_ab996.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
-          姝ｅ湪瀵光€渃mTC_ab996.dir\\Debug\\cmTC_ab996.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+          姝ｅ湪鍒涘缓鈥渃mTC_0d4f6.dir\\Debug\\cmTC_0d4f6.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_0d4f6.dir\\Debug\\cmTC_0d4f6.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_ab996.dir\\Debug\\\\" /Fd"cmTC_ab996.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_0d4f6.dir\\Debug\\\\" /Fd"cmTC_0d4f6.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
           鐢ㄤ簬 x64 鐨?Microsoft (R) C/C++ 浼樺寲缂栬瘧鍣?19.44.35209 鐗?
           鐗堟潈鎵€鏈?C) Microsoft Corporation銆備繚鐣欐墍鏈夋潈鍒┿€?
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_ab996.dir\\Debug\\\\" /Fd"cmTC_ab996.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_0d4f6.dir\\Debug\\\\" /Fd"cmTC_0d4f6.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-phrdcw\\Debug\\cmTC_ab996.exe" /INCREMENTAL /ILK:"cmTC_ab996.dir\\Debug\\cmTC_ab996.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/CMakeFiles/CMakeScratch/TryCompile-phrdcw/Debug/cmTC_ab996.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/CMakeFiles/CMakeScratch/TryCompile-phrdcw/Debug/cmTC_ab996.lib" /MACHINE:X64  /machine:x64 cmTC_ab996.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_ab996.vcxproj -> D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-phrdcw\\Debug\\cmTC_ab996.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vfgund\\Debug\\cmTC_0d4f6.exe" /INCREMENTAL /ILK:"cmTC_0d4f6.dir\\Debug\\cmTC_0d4f6.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/CMakeFiles/CMakeScratch/TryCompile-vfgund/Debug/cmTC_0d4f6.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build/CMakeFiles/CMakeScratch/TryCompile-vfgund/Debug/cmTC_0d4f6.lib" /MACHINE:X64  /machine:x64 cmTC_0d4f6.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_0d4f6.vcxproj -> D:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vfgund\\Debug\\cmTC_0d4f6.exe
         FinalizeBuildStatus:
-          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_ab996.dir\\Debug\\cmTC_ab996.tlog\\unsuccessfulbuild鈥濄€?
-          姝ｅ湪瀵光€渃mTC_ab996.dir\\Debug\\cmTC_ab996.tlog\\cmTC_ab996.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
-        宸插畬鎴愮敓鎴愰」鐩€淒:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-phrdcw\\cmTC_ab996.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_0d4f6.dir\\Debug\\cmTC_0d4f6.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_0d4f6.dir\\Debug\\cmTC_0d4f6.tlog\\cmTC_0d4f6.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淒:\\Project\\JD_Robot\\RobotArm\\TRAC-IK\\Trac-ik-cpp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vfgund\\cmTC_0d4f6.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
         
         宸叉垚鍔熺敓鎴愩€?
             0 涓鍛?
             0 涓敊璇?
         
-        宸茬敤鏃堕棿 00:00:01.18
+        宸茬敤鏃堕棿 00:00:00.87
         
       exitCode: 0
   -

@@ -296,9 +296,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\kdl_tl.cpp" />
     <ClCompile Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\nlopt_ik.cpp" />
     <ClCompile Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\trac_ik.cpp" />
+    <ClCompile Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\src\urdf_kdl_converter.cpp" />
     <ClInclude Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include\kdl_tl.h" />
     <ClInclude Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include\nlopt_ik.h" />
     <ClInclude Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include\trac_ik.h" />
+    <ClInclude Include="D:\Project\JD_Robot\RobotArm\TRAC-IK\Trac-ik-cpp\include\urdf_kdl_converter.h" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

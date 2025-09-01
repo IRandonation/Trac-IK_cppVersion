@@ -23,11 +23,13 @@ set(LIB_SOURCES
     src/kdl_tl.cpp
     src/nlopt_ik.cpp
     src/trac_ik.cpp
+    src/urdf_kdl_converter.cpp
 )
 set(LIB_HEADERS
     include/kdl_tl.h
     include/nlopt_ik.h
     include/trac_ik.h
+    include/urdf_kdl_converter.h
 )
 
 # 1. 创建静态库 trac_ik
@@ -40,6 +42,7 @@ target_include_directories(trac_ik
     PRIVATE
         src      # 如果有一些内部头文件
 )
+
 
 # 3. 查找 vcpkg 安装的第三方库
 find_package(nlopt REQUIRED)
@@ -74,7 +77,20 @@ target_link_libraries(trac_ik_example
         # Boost::system Boost::filesystem
 )
 
-# 7. 添加 urdf 可执行文件
+# 7. 添加 urdf_to_kdl_example 可执行文件
+add_executable(urdf_to_kdl_example examples/urdf_to_kdl_example.cpp)
+target_link_libraries(urdf_to_kdl_example
+    PRIVATE
+        trac_ik
+        NLopt::nlopt
+        orocos-kdl
+        Eigen3::Eigen
+        urdfdom::urdfdom_model
+        urdfdom_headers::urdfdom_headers
+        yaml-cpp::yaml-cpp
+)
+
+# 8. 添加 urdf 可执行文件
 add_executable(urdf examples/urdf.cpp)
 target_include_directories(urdf
     PRIVATE
@@ -87,8 +103,10 @@ target_link_libraries(urdf
         yaml-cpp::yaml-cpp
 )
 
+
+
 # ---------- 安装规则（可选）----------
-install(TARGETS trac_ik trac_ik_example urdf
+install(TARGETS trac_ik trac_ik_example urdf_to_kdl_example urdf
         RUNTIME DESTINATION bin
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib
