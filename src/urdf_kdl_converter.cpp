@@ -3,6 +3,10 @@
 #include <sstream>
 #include <stdexcept>
 #include <algorithm>
+#include <functional>
+#include <queue>
+#include <limits>
+#include <cmath>
 
 namespace URDF_KDL {
 
@@ -423,10 +427,7 @@ bool URDFToKDLConverter::toKDLChain(const std::string& root_name, const std::str
         
         // 创建KDL关节
         KDL::Joint kdl_joint(
-            joint_name,
-            joint->toKDLType(),
-            joint->parent_to_joint_transform.p,
-            joint->axis
+            joint->toKDLType()
         );
         
         // 创建KDL段
@@ -455,8 +456,8 @@ bool URDFToKDLConverter::toKDLChain(const std::string& root_name, const std::str
             // 没有限位的关节
             switch (joint->type) {
                 case JointData::Type::CONTINUOUS:
-                    q_min(i) = -M_PI;
-                    q_max(i) = M_PI;
+                    q_min(i) = -3.14159265358979323846;
+                    q_max(i) = 3.14159265358979323846;
                     break;
                 case JointData::Type::REVOLUTE:
                 case JointData::Type::PRISMATIC:
@@ -661,8 +662,8 @@ bool URDFToKDLConverter::validatePath(const std::string& root_name, const std::s
 }
 
 // 设置错误信息
-void URDFToKDLConverter::setErrorMessage(const std::string& message) {
-    error_message_ = message;
+void URDFToKDLConverter::setErrorMessage(const std::string& message) const {
+    const_cast<URDFToKDLConverter*>(this)->error_message_ = message;
 }
 
 }  // namespace URDF_KDL

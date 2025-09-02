@@ -174,13 +174,13 @@ int main(int argc, char** argv) {
     std::cout << "=================================" << std::endl;
     
     // URDF文件路径
-    std::string urdf_path;
-    if (argc > 1) {
-        urdf_path = argv[1];
-    } else {
-        // 使用默认的URDF文件
-        urdf_path = "examples/robot.urdf";
-    }
+    std::string urdf_path = "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/examples/robot.urdf";
+    // if (argc > 1) {
+    //     urdf_path = argv[1];
+    // } else {
+    //     // 使用默认的URDF文件
+    //     urdf_path = "examples/robot.urdf";
+    // }
     
     std::cout << "Loading URDF file: " << urdf_path << std::endl;
     

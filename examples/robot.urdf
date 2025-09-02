@@ -1,96 +1,453 @@
-<?xml version="1.0"?>
-<robot name="simple_arm">
-
-  <!-- 0. 颜色定义 -->
-  <material name="blue">
-    <color rgba="0.2 0.2 1.0 1.0"/>
-  </material>
-  <material name="red">
-    <color rgba="1.0 0.2 0.2 1.0"/>
-  </material>
-
-  <!-- 1. 基座 -->
-  <link name="base_link">
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000138079725206134 -0.0503337606336685 0.000226633937856385"
+        rpy="0 0 0" />
+      <mass
+        value="0.310055800796731" />
+      <inertia
+        ixx="8.29496352982253E-05"
+        ixy="-7.95506814686224E-08"
+        ixz="-1.42984400546743E-07"
+        iyy="0.00014268548025696"
+        iyz="-5.04747156933985E-08"
+        izz="8.29449882478923E-05" />
+    </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
       <geometry>
-        <cylinder radius="0.05" length="0.1"/>
+        <mesh
+          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/base_link.STL" />
       </geometry>
-      <material name="blue"/>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
       <geometry>
-        <cylinder radius="0.05" length="0.1"/>
+        <mesh
+          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/base_link.STL" />
       </geometry>
     </collision>
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="0.5"/>
-      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
-    </inertial>
   </link>
-
-  <!-- 2. 大臂 -->
-  <link name="link1">
+  <link
+    name="shoulder_pitch_Link">
+    <inertial>
+      <origin
+        xyz="0.00271275409749069 2.03705709658746E-05 0.00183575995096093"
+        rpy="0 0 0" />
+      <mass
+        value="0.586035180256861" />
+      <inertia
+        ixx="0.000269159403082876"
+        ixy="1.56700634606582E-08"
+        ixz="-1.46509753218616E-05"
+        iyy="0.000226671381358969"
+        iyz="-3.63874121147411E-05"
+        izz="0.000187541593014694" />
+    </inertial>
     <visual>
-      <origin xyz="0.1 0 0" rpy="0 0 0"/>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
       <geometry>
-        <box size="0.2 0.03 0.03"/>
+        <mesh
+          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/shoulder_pitch_Link.STL" />
       </geometry>
-      <material name="red"/>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
     </visual>
     <collision>
-      <origin xyz="0.1 0 0" rpy="0 0 0"/>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
       <geometry>
-        <box size="0.2 0.03 0.03"/>
+        <mesh
+          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/shoulder_pitch_Link.STL" />
       </geometry>
     </collision>
-    <inertial>
-      <origin xyz="0.1 0 0" rpy="0 0 0"/>
-      <mass value="0.3"/>
-      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
-    </inertial>
   </link>
-
-  <!-- 3. 小臂 -->
-  <link name="link2">
-    <visual>
-      <origin xyz="0.1 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.2 0.03 0.03"/>
-      </geometry>
-      <material name="blue"/>
-    </visual>
-    <collision>
-      <origin xyz="0.1 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.2 0.03 0.03"/>
-      </geometry>
-    </collision>
-    <inertial>
-      <origin xyz="0.1 0 0" rpy="0 0 0"/>
-      <mass value="0.2"/>
-      <inertia ixx="0.0005" ixy="0" ixz="0" iyy="0.0005" iyz="0" izz="0.0005"/>
-    </inertial>
-  </link>
-
-  <!-- 4. 关节1（base → link1） -->
-  <joint name="joint1" type="revolute">
-    <parent link="base_link"/>
-    <child  link="link1"/>
-    <origin xyz="0 0 0.05" rpy="0 0 0"/>
-    <axis xyz="0 0 1"/>
-    <limit lower="-1.57" upper="1.57" effort="10" velocity="2.0"/>
+  <joint
+    name="joint_1"
+    type="revolute">
+    <origin
+      xyz="0 -0.1255 0"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="shoulder_pitch_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
   </joint>
-
-  <!-- 5. 关节2（link1 → link2） -->
-  <joint name="joint2" type="revolute">
-    <parent link="link1"/>
-    <child  link="link2"/>
-    <origin xyz="0.2 0 0" rpy="0 0 0"/>
-    <axis xyz="0 0 1"/>
-    <limit lower="-1.57" upper="1.57" effort="10" velocity="2.0"/>
+  <link
+    name="shoulder_roll_Link">
+    <inertial>
+      <origin
+        xyz="0.000813291426767074 3.90815922216618E-06 7.29347807672431E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.199195477062016" />
+      <inertia
+        ixx="3.47950084688106E-05"
+        ixy="-4.37498951840581E-09"
+        ixz="3.55578376057846E-11"
+        iyy="3.61983578585478E-05"
+        iyz="-8.50159151405357E-12"
+        izz="6.52217213792281E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/shoulder_roll_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/shoulder_roll_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="revolute">
+    <origin
+      xyz="0.06 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="shoulder_pitch_Link" />
+    <child
+      link="shoulder_roll_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
   </joint>
-
+  <link
+    name="shouder_yaw_Link">
+    <inertial>
+      <origin
+        xyz="5.0164078116401E-07 3.03688627813524E-05 0.143292902067599"
+        rpy="0 0 0" />
+      <mass
+        value="0.698603201546955" />
+      <inertia
+        ixx="0.000331429241554556"
+        ixy="-4.93780008648322E-05"
+        ixz="-4.67200693523199E-09"
+        iyy="0.000297622241485922"
+        iyz="1.93858634524421E-09"
+        izz="0.000295788061658557" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/shouder_yaw_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/shouder_yaw_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="shoulder_roll_Link" />
+    <child
+      link="shouder_yaw_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="elbow_pitch_Link">
+    <inertial>
+      <origin
+        xyz="0.00103329142698316 3.90816235417647E-06 7.29890649729032E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.199195477063106" />
+      <inertia
+        ixx="3.47950084706337E-05"
+        ixy="-4.3749915264984E-09"
+        ixz="3.55564807725884E-11"
+        iyy="3.6198357856724E-05"
+        iyz="-8.50123374364419E-12"
+        izz="6.52217213792371E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/elbow_pitch_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/elbow_pitch_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_4"
+    type="revolute">
+    <origin
+      xyz="0 0 0.22"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="shouder_yaw_Link" />
+    <child
+      link="elbow_pitch_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="elbow_yaw_Link">
+    <inertial>
+      <origin
+        xyz="6.81239376782985E-07 -8.84102456593842E-05 0.09857019925613"
+        rpy="0 0 0" />
+      <mass
+        value="0.292862233057086" />
+      <inertia
+        ixx="8.86637037020494E-05"
+        ixy="2.56921958291823E-09"
+        ixz="8.35181113767355E-09"
+        iyy="8.61981227052922E-05"
+        iyz="-2.10312998293375E-06"
+        izz="3.39325381318934E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/elbow_yaw_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/elbow_yaw_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_5"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="elbow_pitch_Link" />
+    <child
+      link="elbow_yaw_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wrist_roll_Link">
+    <inertial>
+      <origin
+        xyz="-0.0615030370111651 0.00716764684813505 6.09336072722774E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.158699506149188" />
+      <inertia
+        ixx="6.64982478298428E-06"
+        ixy="-4.52552336024636E-06"
+        ixz="-2.71433105545319E-12"
+        iyy="4.31677943142817E-05"
+        iyz="3.86711934415181E-13"
+        izz="4.25201415886165E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/wrist_roll_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/wrist_roll_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_6"
+    type="revolute">
+    <origin
+      xyz="0 0 0.22"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="elbow_yaw_Link" />
+    <child
+      link="wrist_roll_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wrist_pitch_Link">
+    <inertial>
+      <origin
+        xyz="0.0831022575551504 0.00682564719478987 0.00634250668484983"
+        rpy="0 0 0" />
+      <mass
+        value="0.125358654619444" />
+      <inertia
+        ixx="2.80880717392373E-05"
+        ixy="-3.21086101503825E-07"
+        ixz="-1.57299181301074E-06"
+        iyy="3.56734423536315E-05"
+        iyz="-1.4701558536731E-06"
+        izz="3.13899567519566E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/wrist_pitch_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/wrist_pitch_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_7"
+    type="revolute">
+    <origin
+      xyz="0.00844 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="wrist_roll_Link" />
+    <child
+      link="wrist_pitch_Link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
 </robot>

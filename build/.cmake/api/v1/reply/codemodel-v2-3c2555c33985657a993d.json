@@ -1,0 +1,376 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-b9c42caadb9a689016cd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TRAC_IK",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-d339f99b59da63cf44ed.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-2adc81617e465419e659.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trac_ik::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trac_ik-Debug-0c80a47e986856edb26f.json",
+					"name" : "trac_ik",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trac_ik_example::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trac_ik_example-Debug-ef0ff6eea4dd3fa3d15e.json",
+					"name" : "trac_ik_example",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "urdf::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-urdf-Debug-bf76c84fc14882245ed2.json",
+					"name" : "urdf",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "urdf_to_kdl_example::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-urdf_to_kdl_example-Debug-6c2c539e7c789234c937.json",
+					"name" : "urdf_to_kdl_example",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-2c5991d2ee590cfe1cbf.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TRAC_IK",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-d339f99b59da63cf44ed.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-2adc81617e465419e659.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trac_ik::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trac_ik-Release-44a429fffedd861fa5a5.json",
+					"name" : "trac_ik",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trac_ik_example::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trac_ik_example-Release-1623cdc04d82fbb816f2.json",
+					"name" : "trac_ik_example",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "urdf::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-urdf-Release-f8b5af5fada40537cf11.json",
+					"name" : "urdf",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "urdf_to_kdl_example::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-urdf_to_kdl_example-Release-8c9d09a7150e85cfb60e.json",
+					"name" : "urdf_to_kdl_example",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-MinSizeRel-cd937aa59daf970aa768.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TRAC_IK",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-d339f99b59da63cf44ed.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-2adc81617e465419e659.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trac_ik::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trac_ik-MinSizeRel-280c553e8fcaf8f89e6a.json",
+					"name" : "trac_ik",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trac_ik_example::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trac_ik_example-MinSizeRel-5fc0d5300a8519ccf464.json",
+					"name" : "trac_ik_example",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "urdf::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-urdf-MinSizeRel-946d9c477401b1e95459.json",
+					"name" : "urdf",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "urdf_to_kdl_example::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-urdf_to_kdl_example-MinSizeRel-07722d434c904ec64827.json",
+					"name" : "urdf_to_kdl_example",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-RelWithDebInfo-d564ebcf7ef1bcbf9744.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TRAC_IK",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-d339f99b59da63cf44ed.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-2adc81617e465419e659.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trac_ik::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trac_ik-RelWithDebInfo-6e8527551343dd3b9035.json",
+					"name" : "trac_ik",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trac_ik_example::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trac_ik_example-RelWithDebInfo-4973cc6f08a9bd5e1124.json",
+					"name" : "trac_ik_example",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "urdf::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-urdf-RelWithDebInfo-f9c00ada7865f70141b2.json",
+					"name" : "urdf",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "urdf_to_kdl_example::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-urdf_to_kdl_example-RelWithDebInfo-01a72150b359b51d93f1.json",
+					"name" : "urdf_to_kdl_example",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/build",
+		"source" : "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

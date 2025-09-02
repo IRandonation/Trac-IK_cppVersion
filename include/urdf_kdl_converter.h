@@ -9,9 +9,9 @@
 #include <kdl/jntarray.hpp>
 #include <kdl/frames.hpp>
 #include <urdfdom/urdf_parser/urdf_parser.h>
-#include <urdfdom_headers/urdf_model/model.h>
-#include <urdfdom_headers/urdf_model/link.h>
-#include <urdfdom_headers/urdf_model/joint.h>
+#include <urdf_model/model.h>
+#include <urdf_model/link.h>
+#include <urdf_model/joint.h>
 
 namespace URDF_KDL {
 
@@ -255,7 +255,7 @@ public:
     
 private:
     std::shared_ptr<RobotData> robot_data_;
-    std::string error_message_;
+    mutable std::string error_message_;
     
     // 递归构建KDL Chain
     bool buildKDLChainRecursive(const std::string& root_name, const std::string& tip_name,
@@ -267,7 +267,7 @@ private:
                  std::vector<std::string>& link_names, std::vector<std::string>& joint_names) const;
     
     // 设置错误信息
-    void setErrorMessage(const std::string& message);
+    void setErrorMessage(const std::string& message) const;
 };
 
 }  // namespace URDF_KDL
