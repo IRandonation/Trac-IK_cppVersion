@@ -205,55 +205,98 @@ KDL::Joint::JointType JointData::toKDLType() const {
 
 // 链接数据转换
 std::shared_ptr<LinkData> LinkData::fromURDF(const urdf::LinkSharedPtr& link) {
-    if (!link) return nullptr;
-    
+    if (!link) {
+        std::cerr << "[LinkData::fromURDF] Warning: Received null link pointer." << std::endl;
+        return nullptr;
+    }
+
     auto link_data = std::make_shared<LinkData>();
-    
-    // 基本属性
+
+    // --- 基本属性 ---
     link_data->name = link->name;
-    
-    // 转换惯性参数
-    link_data->inertial = InertialData::fromURDF(link->inertial);
-    
-    // 转换视觉元素
-    link_data->visual = VisualData::fromURDF(link->visual);
-    
-    // 转换碰撞元素
-    link_data->collision = CollisionData::fromURDF(link->collision);
-    
-    // 转换视觉元素数组
+    std::cout << "[LinkData::fromURDF] Converting link: " << link_data->name << std::endl;
+
+    // --- 惯性参数 ---
+    if (link->inertial) {
+        link_data->inertial = InertialData::fromURDF(link->inertial);
+    } else {
+        link_data->inertial = nullptr;
+    }
+
+    // --- 视觉元素（单个）---
+    if (link->visual) {
+        link_data->visual = VisualData::fromURDF(link->visual);
+    } else {
+        link_data->visual = nullptr;
+    }
+
+    // --- 碰撞元素（单个）---
+    if (link->collision) {
+        link_data->collision = CollisionData::fromURDF(link->collision);
+    } else {
+        link_data->collision = nullptr;
+    }
+
+    // --- 视觉元素数组（多个）---
     for (const auto& visual : link->visual_array) {
-        link_data->visual_array.push_back(VisualData::fromURDF(visual));
+        if (visual) {
+            auto visual_data = VisualData::fromURDF(visual);
+            link_data->visual_array.push_back(visual_data);
+        } else {
+            std::cerr << "[LinkData::fromURDF] Warning: Null visual element in visual_array for link: " 
+                      << link_data->name << std::endl;
+            link_data->visual_array.push_back(nullptr);  // 保持数组结构一致，或者可以选择不插入
+        }
     }
-    
-    // 转换碰撞元素数组
+
+    // --- 碰撞元素数组（多个）---
     for (const auto& collision : link->collision_array) {
-        link_data->collision_array.push_back(CollisionData::fromURDF(collision));
+        if (collision) {
+            auto collision_data = CollisionData::fromURDF(collision);
+            link_data->collision_array.push_back(collision_data);
+        } else {
+            std::cerr << "[LinkData::fromURDF] Warning: Null collision element in collision_array for link: " 
+                      << link_data->name << std::endl;
+            link_data->collision_array.push_back(nullptr);  // 保持数组结构一致
+        }
     }
-    
-    // 转换子链接名称列表
+
+    // --- 子链接名称列表 ---
     for (const auto& child_link : link->child_links) {
         if (child_link) {
             link_data->child_links.push_back(child_link->name);
+        } else {
+            std::cerr << "[LinkData::fromURDF] Warning: Null child link detected for link: " 
+                      << link_data->name << std::endl;
         }
     }
-    
+
     return link_data;
 }
 
 // 机器人数据转换
 std::shared_ptr<RobotData> RobotData::fromURDF(const urdf::ModelInterfaceSharedPtr& model) {
-    if (!model) return nullptr;
-    
+    if (!model) {
+        std::cout << "NO URDF" << std::endl;
+
+        return nullptr;
+    }
+    std::cout << "Starting URDF to RobotData conversion..." << std::endl;
+
     auto robot_data = std::make_shared<RobotData>();
     
     // 基本属性
     robot_data->name = model->getName();
+
+    std::cout << "Converting links..." << std::endl;
     
     // 转换链接
     for (const auto& link_pair : model->links_) {
+        std::cout << "Converting link: " << link_pair.first << std::endl;
         robot_data->links[link_pair.first] = LinkData::fromURDF(link_pair.second);
     }
+
+    std::cout << "Converting joints..." << std::endl;
     
     // 转换关节
     for (const auto& joint_pair : model->joints_) {
@@ -264,6 +307,9 @@ std::shared_ptr<RobotData> RobotData::fromURDF(const urdf::ModelInterfaceSharedP
     if (model->getRoot()) {
         robot_data->root_link_name = model->getRoot()->name;
     }
+
+    std::cout << "Conversion successful." << std::endl;
+
     
     return robot_data;
 }
@@ -423,19 +469,38 @@ bool URDFToKDLConverter::toKDLChain(const std::string& root_name, const std::str
     // 添加关节和链接
     for (size_t i = 0; i < joint_names.size(); ++i) {
         const auto& joint_name = joint_names[i];
-        const auto& joint = robot_data_->joints.at(joint_name);
-        
-        // 创建KDL关节
-        KDL::Joint kdl_joint(
-            joint->toKDLType()
-        );
-        
-        // 创建KDL段
-        KDL::Segment segment(
-            joint->child_link_name,
-            kdl_joint,
-            KDL::Frame::Identity()  // 关节到子链接的变换在URDF中已经包含在parent_to_joint_transform中
-        );
+        const auto& joint_data = robot_data_->joints.at(joint_name);
+        const auto& child_link_data = robot_data_->links.at(joint_data->child_link_name);
+    
+    KDL::Vector joint_origin_p(
+        joint_data->parent_to_joint_transform.p.x(),
+        joint_data->parent_to_joint_transform.p.y(),
+        joint_data->parent_to_joint_transform.p.z()
+    );
+
+    // 使用解析出来的真实旋转
+    KDL::Rotation joint_origin_M = joint_data->parent_to_joint_transform.M;
+
+    // 创建真正的关节原点偏移向量
+    KDL::Vector joint_offset(joint_origin_p);
+
+    // 创建 KDL::Joint
+    KDL::Joint kdl_joint(
+        joint_data->name,
+        joint_offset,           // ✅ 使用真实偏移，不再是 Zero()
+        joint_data->axis,
+        joint_data->toKDLType()
+    );
+
+    // 创建该 Segment 的真实位姿（关节相对于父链接的变换）
+    KDL::Frame joint_frame(joint_origin_M, joint_offset);
+
+    // 创建 KDL::Segment
+    KDL::Segment segment(
+        child_link_data->name,
+        kdl_joint,
+        joint_frame  // ✅ 使用真实位姿，不再是 Identity()
+    );
         
         chain.addSegment(segment);
     }

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
-     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
-     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
-  name="JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM">
+  name="JG0.8.0-A4-000">
   <link
     name="base_link">
     <inertial>
@@ -25,8 +22,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/base_link.STL" />
+      
       </geometry>
       <material
         name="">
@@ -39,8 +35,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/base_link.STL" />
+      
       </geometry>
     </collision>
   </link>
@@ -65,8 +60,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/shoulder_pitch_Link.STL" />
+      
       </geometry>
       <material
         name="">
@@ -79,8 +73,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/shoulder_pitch_Link.STL" />
+        
       </geometry>
     </collision>
   </link>
@@ -123,8 +116,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/shoulder_roll_Link.STL" />
+        
       </geometry>
       <material
         name="">
@@ -137,8 +129,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/shoulder_roll_Link.STL" />
+        
       </geometry>
     </collision>
   </link>
@@ -181,8 +172,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/shouder_yaw_Link.STL" />
+        
       </geometry>
       <material
         name="">
@@ -195,8 +185,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/shouder_yaw_Link.STL" />
+       
       </geometry>
     </collision>
   </link>
@@ -239,8 +228,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/elbow_pitch_Link.STL" />
+        
       </geometry>
       <material
         name="">
@@ -253,8 +241,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/elbow_pitch_Link.STL" />
+       
       </geometry>
     </collision>
   </link>
@@ -297,8 +284,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/elbow_yaw_Link.STL" />
+
       </geometry>
       <material
         name="">
@@ -311,8 +297,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/elbow_yaw_Link.STL" />
+        
       </geometry>
     </collision>
   </link>
@@ -355,8 +340,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/wrist_roll_Link.STL" />
+
       </geometry>
       <material
         name="">
@@ -369,8 +353,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/wrist_roll_Link.STL" />
+        
       </geometry>
     </collision>
   </link>
@@ -413,8 +396,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/wrist_pitch_Link.STL" />
+ 
       </geometry>
       <material
         name="">
@@ -427,8 +409,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://JG0.8.0-A4-000 手臂组件J（右）_初版（URDF）.SLDASM/meshes/wrist_pitch_Link.STL" />
+    
       </geometry>
     </collision>
   </link>

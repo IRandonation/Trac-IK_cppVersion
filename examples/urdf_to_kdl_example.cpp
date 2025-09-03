@@ -104,9 +104,11 @@ void testTRACIK(const KDL::Chain& chain, const KDL::JntArray& q_min, const KDL::
     TRAC_IK::TRAC_IK solver(chain, q_min, q_max, 0.005, 1e-3, TRAC_IK::TRAC_IK::Speed);
     
     // 创建随机初始关节角度
+    std::default_random_engine generator;
+    std::uniform_real_distribution<double> distribution(-M_PI, M_PI);
     KDL::JntArray q_init(chain.getNrOfJoints());
-    for (unsigned int i = 0; i < q_init.rows(); ++i) {
-        q_init(i) = (q_min(i) + q_max(i)) / 2.0;
+    for (unsigned int k = 0; k < q_init.rows(); k++) {
+                q_init(k) = 0.1;
     }
     
     // 计算正向运动学得到目标位姿
@@ -126,7 +128,9 @@ void testTRACIK(const KDL::Chain& chain, const KDL::JntArray& q_min, const KDL::
         // 求解逆运动学
         KDL::JntArray q_out(chain.getNrOfJoints());
         KDL::Twist bounds(KDL::Vector(0.001, 0.001, 0.001), KDL::Vector(0.01, 0.01, 0.01));
-        
+        for (unsigned int k = 0; k < q_init.rows(); k++) {
+                q_init(k) = 0;
+        }
         auto start_time = std::chrono::high_resolution_clock::now();
         int result = solver.CartToJnt(q_init, target_pose, q_out, bounds);
         auto end_time = std::chrono::high_resolution_clock::now();
@@ -227,7 +231,7 @@ int main(int argc, char** argv) {
     
     // 假设我们知道机器人的根和末端链接名称
     std::string root_link = "base_link";
-    std::string tip_link = "link2";
+    std::string tip_link = "wrist_pitch_Link";
     
     KDL::Chain specific_chain;
     KDL::JntArray specific_q_min, specific_q_max;
