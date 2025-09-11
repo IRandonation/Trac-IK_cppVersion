@@ -511,12 +511,41 @@ bool URDFToKDLConverter::toKDLChain(const std::string& root_name, const std::str
     q_max.resize(num_joints);
     
     for (int i = 0; i < num_joints; ++i) {
+        // 检查索引是否越界
+        if (i >= static_cast<int>(joint_names.size())) {
+            setErrorMessage("Joint index out of bounds when setting joint limits");
+            return false;
+        }
+        
         const auto& joint_name = joint_names[i];
         const auto& joint = robot_data_->joints.at(joint_name);
         
         if (joint->limits) {
-            q_min(i) = joint->limits->lower;
-            q_max(i) = joint->limits->upper;
+            // 检查限位是否有效（lower < upper）
+            if (joint->limits->lower < joint->limits->upper) {
+                q_min(i) = joint->limits->lower;
+                q_max(i) = joint->limits->upper;
+            } else {
+                // 限位无效，根据关节类型设置默认限位
+                switch (joint->type) {
+                    case JointData::Type::CONTINUOUS:
+                        q_min(i) = -3.14159265358979323846;
+                        q_max(i) = 3.14159265358979323846;
+                        break;
+                    case JointData::Type::REVOLUTE:
+                        q_min(i) = -3.14159265358979323846;
+                        q_max(i) = 3.14159265358979323846;
+                        break;
+                    case JointData::Type::PRISMATIC:
+                        q_min(i) = -1.0;
+                        q_max(i) = 1.0;
+                        break;
+                    default:
+                        q_min(i) = 0.0;
+                        q_max(i) = 0.0;
+                        break;
+                }
+            }
         } else {
             // 没有限位的关节
             switch (joint->type) {
@@ -525,9 +554,12 @@ bool URDFToKDLConverter::toKDLChain(const std::string& root_name, const std::str
                     q_max(i) = 3.14159265358979323846;
                     break;
                 case JointData::Type::REVOLUTE:
+                    q_min(i) = -3.14159265358979323846;
+                    q_max(i) = 3.14159265358979323846;
+                    break;
                 case JointData::Type::PRISMATIC:
-                    q_min(i) = -std::numeric_limits<double>::max();
-                    q_max(i) = std::numeric_limits<double>::max();
+                    q_min(i) = -1.0;
+                    q_max(i) = 1.0;
                     break;
                 default:
                     q_min(i) = 0.0;

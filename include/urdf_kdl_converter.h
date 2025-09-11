@@ -8,7 +8,7 @@
 #include <kdl/chain.hpp>
 #include <kdl/jntarray.hpp>
 #include <kdl/frames.hpp>
-#include <urdfdom/urdf_parser/urdf_parser.h>
+#include <urdf_parser/urdf_parser.h>
 #include <urdf_model/model.h>
 #include <urdf_model/link.h>
 #include <urdf_model/joint.h>

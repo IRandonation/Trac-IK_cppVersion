@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <memory>
-#include <urdfdom/urdf_parser/urdf_parser.h>   // urdfdom
+#include <urdf_parser/urdf_parser.h>   // urdfdom
 #include <yaml-cpp/yaml.h>
 
 // 把 urdf::Joint::Type 转字符串

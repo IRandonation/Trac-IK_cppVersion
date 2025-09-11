@@ -34,11 +34,17 @@ namespace TRAC_IK {
         for (size_t i = 0; i < chain_.segments.size(); i++) {
             std::string type = chain_.segments[i].getJoint().getTypeName();
             if (type.find("Rot") != std::string::npos) {
-                if (joint_max_(i) >= std::numeric_limits<double>::infinity() ||
-                    joint_min_(i) <= -std::numeric_limits<double>::infinity())
-                    joint_types_.push_back(KDL::BasicJointType::Continuous);
-                else
+                // 检查索引是否在有效范围内
+                if (i < joint_max_.rows() && i < joint_min_.rows()) {
+                    if (joint_max_(i) >= std::numeric_limits<double>::infinity() ||
+                        joint_min_(i) <= -std::numeric_limits<double>::infinity())
+                        joint_types_.push_back(KDL::BasicJointType::Continuous);
+                    else
+                        joint_types_.push_back(KDL::BasicJointType::RotJoint);
+                } else {
+                    // 如果索引越界，默认为RotJoint
                     joint_types_.push_back(KDL::BasicJointType::RotJoint);
+                }
             } else if (type.find("Trans") != std::string::npos) {
                 joint_types_.push_back(KDL::BasicJointType::TransJoint);
             }
@@ -189,14 +195,20 @@ namespace TRAC_IK {
 
     void TRAC_IK::randomize(KDL::JntArray& q) {
         for (size_t j = 0; j < q.data.size(); ++j) {
-            if (joint_types_[j] == KDL::BasicJointType::Continuous) {
-                std::uniform_real_distribution<double> dist(
-                    q(j) - 2.0 * M_PI, q(j) + 2.0 * M_PI);
-                q(j) = dist(rng_);
+            // 检查索引是否在有效范围内
+            if (j < joint_types_.size() && j < static_cast<size_t>(joint_min_.rows()) && j < static_cast<size_t>(joint_max_.rows())) {
+                if (joint_types_[j] == KDL::BasicJointType::Continuous) {
+                    std::uniform_real_distribution<double> dist(
+                        q(j) - 2.0 * M_PI, q(j) + 2.0 * M_PI);
+                    q(j) = dist(rng_);
+                } else {
+                    std::uniform_real_distribution<double> dist(
+                        joint_min_(j), joint_max_(j));
+                    q(j) = dist(rng_);
+                }
             } else {
-                std::uniform_real_distribution<double> dist(
-                    joint_min_(j), joint_max_(j));
-                q(j) = dist(rng_);
+                // 如果索引越界，保持当前值不变
+                continue;
             }
         }
     }

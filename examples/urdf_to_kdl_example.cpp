@@ -103,12 +103,25 @@ void testTRACIK(const KDL::Chain& chain, const KDL::JntArray& q_min, const KDL::
     // 创建TRAC-IK求解器
     TRAC_IK::TRAC_IK solver(chain, q_min, q_max, 0.005, 1e-3, TRAC_IK::TRAC_IK::Speed);
     
-    // 创建随机初始关节角度
+    // 创建初始关节角度，确保在关节限位范围内
     std::default_random_engine generator;
-    std::uniform_real_distribution<double> distribution(-M_PI, M_PI);
     KDL::JntArray q_init(chain.getNrOfJoints());
     for (unsigned int k = 0; k < q_init.rows(); k++) {
-                q_init(k) = 0.1;
+        // 确保索引在有效范围内
+        if (k < static_cast<unsigned int>(q_min.rows()) && k < static_cast<unsigned int>(q_max.rows())) {
+            // 在关节限位范围内选择一个值，如果限位范围太小，则使用中间值
+            double range = q_max(k) - q_min(k);
+            if (range > 0.01) {
+                std::uniform_real_distribution<double> distribution(q_min(k), q_max(k));
+                q_init(k) = distribution(generator);
+            } else {
+                // 如果范围太小，使用中间值
+                q_init(k) = (q_min(k) + q_max(k)) / 2.0;
+            }
+        } else {
+            // 如果索引越界，使用默认值0
+            q_init(k) = 0.0;
+        }
     }
     
     // 计算正向运动学得到目标位姿
@@ -129,7 +142,18 @@ void testTRACIK(const KDL::Chain& chain, const KDL::JntArray& q_min, const KDL::
         KDL::JntArray q_out(chain.getNrOfJoints());
         KDL::Twist bounds(KDL::Vector(0.001, 0.001, 0.001), KDL::Vector(0.01, 0.01, 0.01));
         for (unsigned int k = 0; k < q_init.rows(); k++) {
-                q_init(k) = 0;
+            // 确保索引在有效范围内
+            if (k < static_cast<unsigned int>(q_min.rows()) && k < static_cast<unsigned int>(q_max.rows())) {
+                // 在关节限位范围内选择一个值，优先使用0，但如果0不在范围内则使用中间值
+                if (q_min(k) <= 0.0 && q_max(k) >= 0.0) {
+                    q_init(k) = 0.0;
+                } else {
+                    q_init(k) = (q_min(k) + q_max(k)) / 2.0;
+                }
+            } else {
+                // 如果索引越界，使用默认值0
+                q_init(k) = 0.0;
+            }
         }
         auto start_time = std::chrono::high_resolution_clock::now();
         int result = solver.CartToJnt(q_init, target_pose, q_out, bounds);
@@ -178,7 +202,7 @@ int main(int argc, char** argv) {
     std::cout << "=================================" << std::endl;
     
     // URDF文件路径
-    std::string urdf_path = "D:/Project/JD_Robot/RobotArm/TRAC-IK/Trac-ik-cpp/examples/robot.urdf";
+    std::string urdf_path = "/home/chen/Documents/Trac-IK_cppVersion/examples/robot.urdf";
     // if (argc > 1) {
     //     urdf_path = argv[1];
     // } else {
