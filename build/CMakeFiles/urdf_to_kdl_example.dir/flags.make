@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/chen/Documents/Trac-IK_cppVersion/include -I/home/chen/Documents/Trac-IK_cppVersion/src -isystem /usr/include/eigen3
+CXX_INCLUDES = -I/home/baby6/Documents/Trac-IK_cppVersion/include -I/home/baby6/Documents/Trac-IK_cppVersion/src -isystem /usr/include/eigen3
 
 CXX_FLAGS = 
 

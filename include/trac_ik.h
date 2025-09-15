@@ -86,15 +86,14 @@ namespace TRAC_IK {
         const std::unique_ptr<KDL::ChainIkSolverPos_TL>& getKDL() const { return kdl_solver_; }
         const std::unique_ptr<NLOPT_IK::NLOPT_IK>& getNLOPT() const { return nlopt_solver_; }
 
-        /// ✅ 并行求解入口（带误差验证 + 失败回退随机重启）
-        int CartToJntParallel(
-            const KDL::JntArray& q_init,
-            const KDL::Frame& p_in,
-            KDL::JntArray& q_out,
-            const KDL::Twist& bounds,
-            double timeout_ms);
+
 
     private:
+
+        std::unique_ptr<KDL::ChainJntToJacSolver>  jac_solver_;
+        std::unique_ptr<KDL::ChainFkSolverPos_recursive> fk_solver_;
+        std::mt19937                                 rng_;
+        KDL::JntArray                                q_reuse_;
 
         const KDL::Chain& chain_;
         KDL::JntArray joint_min_, joint_max_;
@@ -112,7 +111,7 @@ namespace TRAC_IK {
         KDL::Twist bounds_;
         int progress_;
 
-        std::default_random_engine rng_;
+        // std::default_random_engine rng_;
 
         void randomize(KDL::JntArray& q);
         double manipulability(const KDL::JntArray& q);
@@ -125,6 +124,7 @@ namespace TRAC_IK {
             KDL::JntArray& q_out,
             const KDL::Twist& bounds);
     };
+
 
 } // namespace TRAC_IK
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/chen/Documents/Trac-IK_cppVersion
+# Install script for directory: /home/baby6/Documents/Trac-IK_cppVersion
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/chen/Documents/Trac-IK_cppVersion/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/baby6/Documents/Trac-IK_cppVersion/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

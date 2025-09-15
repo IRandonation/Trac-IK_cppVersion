@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <chrono>
 #include <memory>
+#include <unistd.h>
 
 #include "urdf_kdl_converter.h"
 #include "trac_ik.h"
@@ -198,11 +199,19 @@ void testTRACIK(const KDL::Chain& chain, const KDL::JntArray& q_min, const KDL::
 }
 
 int main(int argc, char** argv) {
+    int result = nice(19);
+    if (result == -1) {
+        perror("无法调整优先级");
+        return 1;
+    }
+    
+    printf("进程优先级已调整\n");
+
     std::cout << "URDF to KDL Chain Builder Example" << std::endl;
     std::cout << "=================================" << std::endl;
     
     // URDF文件路径
-    std::string urdf_path = "/home/chen/Documents/Trac-IK_cppVersion/examples/robot.urdf";
+    std::string urdf_path = "/home/baby6/Documents/Trac-IK_cppVersion/examples/robot.urdf";
     // if (argc > 1) {
     //     urdf_path = argv[1];
     // } else {

@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/urdf.dir/examples/urdf.cpp.o -o urdf  -Wl,-rpath,/usr/local/lib libtrac_ik.a -lnlopt -lorocos-kdl -lurdfdom_model /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.7.0 
+/usr/bin/c++ CMakeFiles/urdf.dir/examples/urdf.cpp.o -o urdf  -Wl,-rpath,/usr/local/lib libtrac_ik.a -lnlopt -lorocos-kdl -lurdfdom_model /usr/lib/aarch64-linux-gnu/libyaml-cpp.so.0.7.0 

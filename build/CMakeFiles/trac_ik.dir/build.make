@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chen/Documents/Trac-IK_cppVersion
+CMAKE_SOURCE_DIR = /home/baby6/Documents/Trac-IK_cppVersion
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chen/Documents/Trac-IK_cppVersion/build
+CMAKE_BINARY_DIR = /home/baby6/Documents/Trac-IK_cppVersion/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/trac_ik.dir/depend.make
@@ -72,58 +72,58 @@ include CMakeFiles/trac_ik.dir/flags.make
 CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.o: CMakeFiles/trac_ik.dir/flags.make
 CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.o: ../src/kdl_tl.cpp
 CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.o: CMakeFiles/trac_ik.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chen/Documents/Trac-IK_cppVersion/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.o -MF CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.o.d -o CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.o -c /home/chen/Documents/Trac-IK_cppVersion/src/kdl_tl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/baby6/Documents/Trac-IK_cppVersion/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.o -MF CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.o.d -o CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.o -c /home/baby6/Documents/Trac-IK_cppVersion/src/kdl_tl.cpp
 
 CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chen/Documents/Trac-IK_cppVersion/src/kdl_tl.cpp > CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/baby6/Documents/Trac-IK_cppVersion/src/kdl_tl.cpp > CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.i
 
 CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chen/Documents/Trac-IK_cppVersion/src/kdl_tl.cpp -o CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/baby6/Documents/Trac-IK_cppVersion/src/kdl_tl.cpp -o CMakeFiles/trac_ik.dir/src/kdl_tl.cpp.s
 
 CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.o: CMakeFiles/trac_ik.dir/flags.make
 CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.o: ../src/nlopt_ik.cpp
 CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.o: CMakeFiles/trac_ik.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chen/Documents/Trac-IK_cppVersion/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.o -MF CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.o.d -o CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.o -c /home/chen/Documents/Trac-IK_cppVersion/src/nlopt_ik.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/baby6/Documents/Trac-IK_cppVersion/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.o -MF CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.o.d -o CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.o -c /home/baby6/Documents/Trac-IK_cppVersion/src/nlopt_ik.cpp
 
 CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chen/Documents/Trac-IK_cppVersion/src/nlopt_ik.cpp > CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/baby6/Documents/Trac-IK_cppVersion/src/nlopt_ik.cpp > CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.i
 
 CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chen/Documents/Trac-IK_cppVersion/src/nlopt_ik.cpp -o CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/baby6/Documents/Trac-IK_cppVersion/src/nlopt_ik.cpp -o CMakeFiles/trac_ik.dir/src/nlopt_ik.cpp.s
 
 CMakeFiles/trac_ik.dir/src/trac_ik.cpp.o: CMakeFiles/trac_ik.dir/flags.make
 CMakeFiles/trac_ik.dir/src/trac_ik.cpp.o: ../src/trac_ik.cpp
 CMakeFiles/trac_ik.dir/src/trac_ik.cpp.o: CMakeFiles/trac_ik.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chen/Documents/Trac-IK_cppVersion/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/trac_ik.dir/src/trac_ik.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trac_ik.dir/src/trac_ik.cpp.o -MF CMakeFiles/trac_ik.dir/src/trac_ik.cpp.o.d -o CMakeFiles/trac_ik.dir/src/trac_ik.cpp.o -c /home/chen/Documents/Trac-IK_cppVersion/src/trac_ik.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/baby6/Documents/Trac-IK_cppVersion/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/trac_ik.dir/src/trac_ik.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trac_ik.dir/src/trac_ik.cpp.o -MF CMakeFiles/trac_ik.dir/src/trac_ik.cpp.o.d -o CMakeFiles/trac_ik.dir/src/trac_ik.cpp.o -c /home/baby6/Documents/Trac-IK_cppVersion/src/trac_ik.cpp
 
 CMakeFiles/trac_ik.dir/src/trac_ik.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/trac_ik.dir/src/trac_ik.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chen/Documents/Trac-IK_cppVersion/src/trac_ik.cpp > CMakeFiles/trac_ik.dir/src/trac_ik.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/baby6/Documents/Trac-IK_cppVersion/src/trac_ik.cpp > CMakeFiles/trac_ik.dir/src/trac_ik.cpp.i
 
 CMakeFiles/trac_ik.dir/src/trac_ik.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/trac_ik.dir/src/trac_ik.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chen/Documents/Trac-IK_cppVersion/src/trac_ik.cpp -o CMakeFiles/trac_ik.dir/src/trac_ik.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/baby6/Documents/Trac-IK_cppVersion/src/trac_ik.cpp -o CMakeFiles/trac_ik.dir/src/trac_ik.cpp.s
 
 CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.o: CMakeFiles/trac_ik.dir/flags.make
 CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.o: ../src/urdf_kdl_converter.cpp
 CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.o: CMakeFiles/trac_ik.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chen/Documents/Trac-IK_cppVersion/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.o -MF CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.o.d -o CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.o -c /home/chen/Documents/Trac-IK_cppVersion/src/urdf_kdl_converter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/baby6/Documents/Trac-IK_cppVersion/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.o -MF CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.o.d -o CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.o -c /home/baby6/Documents/Trac-IK_cppVersion/src/urdf_kdl_converter.cpp
 
 CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chen/Documents/Trac-IK_cppVersion/src/urdf_kdl_converter.cpp > CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/baby6/Documents/Trac-IK_cppVersion/src/urdf_kdl_converter.cpp > CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.i
 
 CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chen/Documents/Trac-IK_cppVersion/src/urdf_kdl_converter.cpp -o CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/baby6/Documents/Trac-IK_cppVersion/src/urdf_kdl_converter.cpp -o CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.s
 
 # Object files for target trac_ik
 trac_ik_OBJECTS = \
@@ -141,7 +141,7 @@ libtrac_ik.a: CMakeFiles/trac_ik.dir/src/trac_ik.cpp.o
 libtrac_ik.a: CMakeFiles/trac_ik.dir/src/urdf_kdl_converter.cpp.o
 libtrac_ik.a: CMakeFiles/trac_ik.dir/build.make
 libtrac_ik.a: CMakeFiles/trac_ik.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chen/Documents/Trac-IK_cppVersion/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libtrac_ik.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/baby6/Documents/Trac-IK_cppVersion/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libtrac_ik.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/trac_ik.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/trac_ik.dir/link.txt --verbose=$(VERBOSE)
 
@@ -154,6 +154,6 @@ CMakeFiles/trac_ik.dir/clean:
 .PHONY : CMakeFiles/trac_ik.dir/clean
 
 CMakeFiles/trac_ik.dir/depend:
-	cd /home/chen/Documents/Trac-IK_cppVersion/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chen/Documents/Trac-IK_cppVersion /home/chen/Documents/Trac-IK_cppVersion /home/chen/Documents/Trac-IK_cppVersion/build /home/chen/Documents/Trac-IK_cppVersion/build /home/chen/Documents/Trac-IK_cppVersion/build/CMakeFiles/trac_ik.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/baby6/Documents/Trac-IK_cppVersion/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/baby6/Documents/Trac-IK_cppVersion /home/baby6/Documents/Trac-IK_cppVersion /home/baby6/Documents/Trac-IK_cppVersion/build /home/baby6/Documents/Trac-IK_cppVersion/build /home/baby6/Documents/Trac-IK_cppVersion/build/CMakeFiles/trac_ik.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/trac_ik.dir/depend
 
