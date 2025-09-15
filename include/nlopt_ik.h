@@ -13,6 +13,8 @@
 
 #include <Eigen/Dense>
 
+#include <kdl/chainjnttojacsolver.hpp>
+
 namespace NLOPT_IK {
 
     // 关节类型枚举
@@ -98,6 +100,9 @@ namespace NLOPT_IK {
         const KDL::Chain& chain_;
         KDL::JntArray joint_min_, joint_max_;
         KDL::ChainFkSolverPos_recursive fk_solver_;
+        std::unique_ptr<KDL::ChainJntToJacSolver> jac_solver_;
+        KDL::Frame f_curr_;
+
         KDL::JntArray q_tmp_;
 
         // --------------------------

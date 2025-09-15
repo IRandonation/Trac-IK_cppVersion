@@ -211,7 +211,7 @@ int main(int argc, char** argv) {
     std::cout << "=================================" << std::endl;
     
     // URDF文件路径
-    std::string urdf_path = "/home/baby6/Documents/Trac-IK_cppVersion/examples/robot.urdf";
+    std::string urdf_path = "/mnt/hgfs/RobotArm/Trac-IK_cppVersion/examples/robot.urdf";
     // if (argc > 1) {
     //     urdf_path = argv[1];
     // } else {

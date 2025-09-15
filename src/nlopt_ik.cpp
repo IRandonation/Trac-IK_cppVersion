@@ -22,6 +22,7 @@ namespace NLOPT_IK {
         joint_min_(q_min),
         joint_max_(q_max),
         fk_solver_(chain),
+        jac_solver_(std::make_unique<KDL::ChainJntToJacSolver>(chain)),
         q_tmp_(chain.getNrOfJoints()),
         maxtime_(maxtime),
         eps_(eps),
@@ -104,6 +105,7 @@ namespace NLOPT_IK {
             best_x_[i] = q_init(i);
         }
         f_target_ = p_in;
+        fk_solver_.JntToCart(q_init, f_curr_);
     }
 
     void NLOPT_IK::restart(const KDL::JntArray& q_init) {
@@ -156,6 +158,7 @@ namespace NLOPT_IK {
             error[0] = 1e9;
             return;
         }
+        f_curr_ = currentPose;
 
         KDL::Twist delta = KDL::diff(f_target_, currentPose);
 
@@ -222,15 +225,30 @@ namespace NLOPT_IK {
                                          std::vector<double>& g,
                                          void* d) -> double {
                     double err[1] = {0};
-                    static_cast<NLOPT_IK*>(d)->cartSumSquaredError(v, err);
+                    NLOPT_IK* ik_solver = static_cast<NLOPT_IK*>(d);
+                    ik_solver->cartSumSquaredError(v, err);
                     if (!g.empty()) {
-                        const double h = 1e-6;
+                        KDL::Jacobian jac(ik_solver->chain_.getNrOfJoints());
+                        ik_solver->jac_solver_->JntToJac(ik_solver->q_tmp_, jac);
+
+                        KDL::Twist delta = KDL::diff(ik_solver->f_target_, ik_solver->f_curr_);
+
+                        // Apply bounds to delta for gradient calculation as well
+                        if (std::abs(delta.vel.x()) <= std::abs(ik_solver->bounds_.vel.x())) delta.vel.x(0);
+                        if (std::abs(delta.vel.y()) <= std::abs(ik_solver->bounds_.vel.y())) delta.vel.y(0);
+                        if (std::abs(delta.vel.z()) <= std::abs(ik_solver->bounds_.vel.z())) delta.vel.z(0);
+                        if (std::abs(delta.rot.x()) <= std::abs(ik_solver->bounds_.rot.x())) delta.rot.x(0);
+                        if (std::abs(delta.rot.y()) <= std::abs(ik_solver->bounds_.rot.y())) delta.rot.y(0);
+                        if (std::abs(delta.rot.z()) <= std::abs(ik_solver->bounds_.rot.z())) delta.rot.z(0);
+
+                        // Gradient of 0.5 * ||delta||^2 is J^T * delta
                         for (size_t i = 0; i < v.size(); ++i) {
-                            std::vector<double> vh = v;
-                            vh[i] += h;
-                            double e2[1];
-                            static_cast<NLOPT_IK*>(d)->cartSumSquaredError(vh, e2);
-                            g[i] = (e2[0] - err[0]) / h;
+                            g[i] = jac.data(0, i) * delta.vel.x() +
+                                   jac.data(1, i) * delta.vel.y() +
+                                   jac.data(2, i) * delta.vel.z() +
+                                   jac.data(3, i) * delta.rot.x() +
+                                   jac.data(4, i) * delta.rot.y() +
+                                   jac.data(5, i) * delta.rot.z();
                         }
                     }
                     return err[0];

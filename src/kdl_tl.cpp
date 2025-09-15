@@ -155,8 +155,9 @@ namespace KDL {
             if (wrap_) {
                 double range = joint_max_(i) - joint_min_(i);
                 if (range > 0.0) {
-                    while (v > joint_max_(i)) v -= range;
-                    while (v < joint_min_(i)) v += range;
+                    v = fmod(v - joint_min_(i), range);
+                    if (v < 0) v += range;
+                    v += joint_min_(i);
                 }
             } else {
                 v = std::max(joint_min_(i), std::min(joint_max_(i), v));

@@ -81,6 +81,7 @@ namespace TRAC_IK {
         // 初始化 RNG（可用固定种子调试，生产可改为随机种子）
         std::random_device rd;
         rng_.seed(rd());
+        dist01_ = std::uniform_real_distribution<double>(0.0, 1.0);
     }
 
     // ----------------------------
@@ -168,95 +169,7 @@ namespace TRAC_IK {
             return 0;
         }
 
-        // 依据模式调整重启次数。Speed 模式下显著减少重启并首次可行解立即返回。
-        const int default_max_restarts = 100;
-        const int speed_max_restarts = 10;
-        const int max_restarts = (solve_type_ == Speed) ? speed_max_restarts : default_max_restarts;
-
-        // 复用容器（避免频繁分配）
-        std::vector<KDL::JntArray> solutions;
-        std::vector<double> errors;
-        solutions.reserve(32);
-        errors.reserve(32);
-
-        for (int i = 0; i < max_restarts; i++) {
-            // 使用预分配的 q_reuse_
-            KDL::JntArray& q_random = q_reuse_;
-            // 生成随机初值
-            randomize(q_random);
-
-            // 尝试 KDL
-            kdl_solver_->restart(q_random);
-            kdl_result = kdl_solver_->CartToJnt(q_random, p_in, q_out_, bounds_);
-            if (kdl_result == 0) {
-                if (solve_type_ == Speed) {
-                    q_out = q_out_;
-                    return 0; // Speed：首次成功立即返回
-                }
-                solutions.push_back(q_out_);
-                double error = 0.0;
-                switch (solve_type_) {
-                    case Speed: error = 1.0; break;
-                    case Distance:
-                        for (unsigned int j = 0; j < q_init.rows(); ++j) {
-                            double d = q_out_(j) - q_init(j);
-                            error += d * d;
-                        }
-                        break;
-                    case Manip1: error = manipulability(q_out_); break;
-                    case Manip2: error = manipulability2(q_out_); break;
-                }
-                errors.push_back(error);
-            }
-
-            // 尝试 NLopt
-            nlopt_solver_->restart(q_random);
-            nlopt_result = nlopt_solver_->CartToJnt(q_random, p_in, q_out_, bounds_);
-            if (nlopt_result == 0) {
-                if (solve_type_ == Speed) {
-                    q_out = q_out_;
-                    return 0;
-                }
-                solutions.push_back(q_out_);
-                double error = 0.0;
-                switch (solve_type_) {
-                    case Speed: error = 1.0; break;
-                    case Distance:
-                        for (unsigned int j = 0; j < q_init.rows(); ++j) {
-                            double d = q_out_(j) - q_init(j);
-                            error += d * d;
-                        }
-                        break;
-                    case Manip1: error = manipulability(q_out_); break;
-                    case Manip2: error = manipulability2(q_out_); break;
-                }
-                errors.push_back(error);
-            }
-        }
-
-        // 如果收集到了若干解（非 Speed 模式），选最优一个
-        if (!solutions.empty()) {
-            int best_idx = 0;
-            double best_error = errors[0];
-            for (size_t i = 1; i < errors.size(); i++) {
-                bool prefer_larger = (solve_type_ == Manip1 || solve_type_ == Manip2);
-                if (prefer_larger ? (errors[i] > best_error) : (errors[i] < best_error)) {
-                    best_error = errors[i];
-                    best_idx = i;
-                }
-            }
-            q_out = solutions[best_idx];
-            return 0;
-        }
-
-        // 否则，返回最后一次 solver 的结果（尽量返回 nlopt 更好的结果）
-        if (kdl_result > nlopt_result) {
-            q_out = nlopt_solver_->qout();
-            return nlopt_result;
-        } else {
-            q_out = kdl_solver_->qout();
-            return kdl_result;
-        }
+        return TryRandomRestarts(q_init, p_in, q_out, bounds_);
     }
 
     // ----------------------------
@@ -267,8 +180,7 @@ namespace TRAC_IK {
         for (unsigned j = 0; j < NJ; ++j) {
             if (j < joint_types_.size() && j < static_cast<size_t>(joint_min_.rows()) && j < static_cast<size_t>(joint_max_.rows())) {
                 // 生成 [0,1) 随机数
-                std::uniform_real_distribution<double> dist01(0.0, 1.0);
-                double rnd = dist01(rng_);
+                double rnd = dist01_(rng_);
                 if (joint_types_[j] == KDL::BasicJointType::Continuous) {
                     double low = q(j) - 2.0 * M_PI;
                     double high = q(j) + 2.0 * M_PI;
@@ -380,23 +292,72 @@ namespace TRAC_IK {
         KDL::JntArray& q_out,
         const KDL::Twist& bounds)
     {
+        // 时间预算开始
+        const double time_limit = std::max(0.0, maxtime_);
+        auto t0 = std::chrono::steady_clock::now();
+    
+        // Speed 模式：先 KDL-only，后 NLopt 兜底
+        if (solve_type_ == Speed) {
+            const int kdl_only_trials = 10;   // 可根据需要调整
+            const int nlopt_trials    = 2;    // 极少数兜底尝试
+    
+            // KDL-only 重启
+            for (int i = 0; i < kdl_only_trials; ++i) {
+                if (time_limit > 0.0) {
+                    double elapsed = std::chrono::duration<double>(std::chrono::steady_clock::now() - t0).count();
+                    if (elapsed >= time_limit) return -1;
+                }
+    
+                KDL::JntArray& q_random = q_reuse_;
+                randomize(q_random);
+    
+                kdl_solver_->restart(q_random);
+                int kdl_result = kdl_solver_->CartToJnt(q_random, p_in, q_out_, bounds);
+                if (kdl_result == 0) { q_out = q_out_; return 0; }
+            }
+    
+            // NLopt 兜底（极少数次）
+            for (int i = 0; i < nlopt_trials; ++i) {
+                if (time_limit > 0.0) {
+                    double elapsed = std::chrono::duration<double>(std::chrono::steady_clock::now() - t0).count();
+                    if (elapsed >= time_limit) return -1;
+                }
+    
+                KDL::JntArray& q_random = q_reuse_;
+                randomize(q_random);
+    
+                nlopt_solver_->restart(q_random);
+                int nlopt_result = nlopt_solver_->CartToJnt(q_random, p_in, q_out_, bounds);
+                if (nlopt_result == 0) { q_out = q_out_; return 0; }
+            }
+    
+            return -1;
+        }
+    
+        // 非 Speed 模式：保留原有收集最优解逻辑，加入时间预算检查
+    
         const int default_max_restarts = 100;
-        const int speed_max_restarts = 10;
+        const int speed_max_restarts = 10; // 未使用（仅用于兼容变量存在）
         const int max_restarts = (solve_type_ == Speed) ? speed_max_restarts : default_max_restarts;
-
+    
         std::vector<KDL::JntArray> solutions;
         std::vector<double> errors;
         solutions.reserve(32);
         errors.reserve(32);
-
+    
         for (int i = 0; i < max_restarts; ++i) {
+            if (time_limit > 0.0) {
+                double elapsed = std::chrono::duration<double>(std::chrono::steady_clock::now() - t0).count();
+                if (elapsed >= time_limit) break;
+            }
+    
             KDL::JntArray& q_random = q_reuse_;
             randomize(q_random);
-
+    
             kdl_solver_->restart(q_random);
             int kdl_result = kdl_solver_->CartToJnt(q_random, p_in, q_out_, bounds);
             if (kdl_result == 0) {
-                if (solve_type_ == Speed) { q_out = q_out_; return 0; }
+                // 非 Speed 模式：记录候选解
                 solutions.push_back(q_out_);
                 double error = 0.0;
                 switch (solve_type_) {
@@ -412,11 +373,16 @@ namespace TRAC_IK {
                 }
                 errors.push_back(error);
             }
-
+    
+            if (time_limit > 0.0) {
+                double elapsed = std::chrono::duration<double>(std::chrono::steady_clock::now() - t0).count();
+                if (elapsed >= time_limit) break;
+            }
+    
             nlopt_solver_->restart(q_random);
             int nlopt_result = nlopt_solver_->CartToJnt(q_random, p_in, q_out_, bounds);
             if (nlopt_result == 0) {
-                if (solve_type_ == Speed) { q_out = q_out_; return 0; }
+                // 非 Speed 模式：记录候选解
                 solutions.push_back(q_out_);
                 double error = 0.0;
                 switch (solve_type_) {
@@ -433,7 +399,7 @@ namespace TRAC_IK {
                 errors.push_back(error);
             }
         }
-
+    
         if (!solutions.empty()) {
             int best_idx = 0;
             double best_error = errors[0];
@@ -447,7 +413,7 @@ namespace TRAC_IK {
             q_out = solutions[best_idx];
             return 0;
         }
-
+    
         return -1;
     }
 

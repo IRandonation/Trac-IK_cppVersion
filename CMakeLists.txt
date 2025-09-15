@@ -4,6 +4,16 @@ project(TRAC_IK)
 
 set(CMAKE_CXX_STANDARD 17)
 
+# 设置编译模式为 Release（默认开启 -O3 和 -DNDEBUG）
+set(CMAKE_BUILD_TYPE Release)
+
+# 强制添加优化选项（确保生效，不受默认配置影响）
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -march=native")
+set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3 -march=native")
+
+# 确保 NDEBUG 宏被定义（禁用 assert 等调试代码）
+add_definitions(-DNDEBUG)
+
 # ============ 查找依赖 ============
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(NLOPT REQUIRED nlopt)

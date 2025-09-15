@@ -111,6 +111,8 @@ namespace TRAC_IK {
         KDL::Twist bounds_;
         int progress_;
 
+        std::uniform_real_distribution<double> dist01_; // 新增：用于 randomize 的随机数分布
+
         // std::default_random_engine rng_;
 
         void randomize(KDL::JntArray& q);
