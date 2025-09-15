@@ -61,7 +61,7 @@ namespace NLOPT_IK {
         }
 
         // 构造 NLOPT 优化器
-        nlopt_ = std::make_unique<nlopt::opt>(nlopt::LD_LBFGS, chain_.getNrOfJoints());
+        nlopt_ = std::make_unique<nlopt::opt>(nlopt::LD_SLSQP, chain_.getNrOfJoints());
         nlopt_->set_lower_bounds(x_min_);
         nlopt_->set_upper_bounds(x_max_);
         nlopt_->set_ftol_rel(eps_);

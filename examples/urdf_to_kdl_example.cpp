@@ -104,97 +104,55 @@ void testTRACIK(const KDL::Chain& chain, const KDL::JntArray& q_min, const KDL::
     // 创建TRAC-IK求解器
     TRAC_IK::TRAC_IK solver(chain, q_min, q_max, 0.005, 1e-3, TRAC_IK::TRAC_IK::Speed);
     
-    // 创建初始关节角度，确保在关节限位范围内
     std::default_random_engine generator;
-    KDL::JntArray q_init(chain.getNrOfJoints());
-    for (unsigned int k = 0; k < q_init.rows(); k++) {
-        // 确保索引在有效范围内
-        if (k < static_cast<unsigned int>(q_min.rows()) && k < static_cast<unsigned int>(q_max.rows())) {
-            // 在关节限位范围内选择一个值，如果限位范围太小，则使用中间值
-            double range = q_max(k) - q_min(k);
-            if (range > 0.01) {
-                std::uniform_real_distribution<double> distribution(q_min(k), q_max(k));
-                q_init(k) = distribution(generator);
-            } else {
-                // 如果范围太小，使用中间值
-                q_init(k) = (q_min(k) + q_max(k)) / 2.0;
-            }
-        } else {
-            // 如果索引越界，使用默认值0
-            q_init(k) = 0.0;
-        }
-    }
-    
-    // 计算正向运动学得到目标位姿
     KDL::ChainFkSolverPos_recursive fk_solver(chain);
-    KDL::Frame target_pose;
-    if (fk_solver.JntToCart(q_init, target_pose) >= 0) {
-        std::cout << "Target pose calculated successfully" << std::endl;
-        
-        // 打印目标位姿
-        std::cout << "Target position: [" << target_pose.p.x() << ", " 
-                  << target_pose.p.y() << ", " << target_pose.p.z() << "]" << std::endl;
-        
-        double roll, pitch, yaw;
-        target_pose.M.GetRPY(roll, pitch, yaw);
-        std::cout << "Target orientation (RPY): [" << roll << ", " << pitch << ", " << yaw << "]" << std::endl;
-        
-        // 求解逆运动学
-        KDL::JntArray q_out(chain.getNrOfJoints());
-        KDL::Twist bounds(KDL::Vector(0.001, 0.001, 0.001), KDL::Vector(0.01, 0.01, 0.01));
+    KDL::Twist bounds(KDL::Vector(0.001, 0.001, 0.001), KDL::Vector(0.01, 0.01, 0.01));
+
+    const int num_tests = 10000;
+    long long total_duration = 0;
+    int successful_tests = 0;
+
+    for (int i = 0; i < num_tests; ++i) {
+        // 创建初始关节角度，确保在关节限位范围内
+        KDL::JntArray q_init(chain.getNrOfJoints());
         for (unsigned int k = 0; k < q_init.rows(); k++) {
-            // 确保索引在有效范围内
             if (k < static_cast<unsigned int>(q_min.rows()) && k < static_cast<unsigned int>(q_max.rows())) {
-                // 在关节限位范围内选择一个值，优先使用0，但如果0不在范围内则使用中间值
-                if (q_min(k) <= 0.0 && q_max(k) >= 0.0) {
-                    q_init(k) = 0.0;
+                double range = q_max(k) - q_min(k);
+                if (range > 0.01) {
+                    std::uniform_real_distribution<double> distribution(q_min(k), q_max(k));
+                    q_init(k) = distribution(generator);
                 } else {
                     q_init(k) = (q_min(k) + q_max(k)) / 2.0;
                 }
             } else {
-                // 如果索引越界，使用默认值0
                 q_init(k) = 0.0;
             }
         }
-        auto start_time = std::chrono::high_resolution_clock::now();
-        int result = solver.CartToJnt(q_init, target_pose, q_out, bounds);
-        auto end_time = std::chrono::high_resolution_clock::now();
         
-        auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
-        
-        if (result >= 0) {
-            std::cout << "IK solution found successfully!" << std::endl;
-            std::cout << "Solution time: " << duration.count() << " microseconds" << std::endl;
+        // 计算正向运动学得到目标位姿
+        KDL::Frame target_pose;
+        if (fk_solver.JntToCart(q_init, target_pose) >= 0) {
+            KDL::JntArray q_out(chain.getNrOfJoints());
             
-            std::cout << "Initial joint angles: [";
-            for (unsigned int i = 0; i < q_init.rows(); ++i) {
-                std::cout << q_init(i);
-                if (i < q_init.rows() - 1) std::cout << ", ";
-            }
-            std::cout << "]" << std::endl;
+            auto start_time = std::chrono::high_resolution_clock::now();
+            int result = solver.CartToJnt(q_init, target_pose, q_out, bounds);
+            auto end_time = std::chrono::high_resolution_clock::now();
             
-            std::cout << "Solution joint angles: [";
-            for (unsigned int i = 0; i < q_out.rows(); ++i) {
-                std::cout << q_out(i);
-                if (i < q_out.rows() - 1) std::cout << ", ";
+            if (result >= 0) {
+                total_duration += std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time).count();
+                std::cout << "single time: " << std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time).count() << std::endl;
+                successful_tests++;
             }
-            std::cout << "]" << std::endl;
-            
-            // 验证解的正确性
-            KDL::Frame computed_pose;
-            if (fk_solver.JntToCart(q_out, computed_pose) >= 0) {
-                KDL::Twist error = KDL::diff(target_pose, computed_pose);
-                double pos_error = error.vel.Norm();
-                double rot_error = error.rot.Norm();
-                
-                std::cout << "Position error: " << pos_error << " m" << std::endl;
-                std::cout << "Orientation error: " << rot_error << " rad" << std::endl;
-            }
-        } else {
-            std::cout << "Failed to find IK solution" << std::endl;
         }
+    }
+
+    if (successful_tests > 0) {
+        double average_duration = static_cast<double>(total_duration) / successful_tests;
+        std::cout << "Completed " << num_tests << " IK tests." << std::endl;
+        std::cout << "Successful tests: " << successful_tests << std::endl;
+        std::cout << "Average IK solution time: " << average_duration << " microseconds" << std::endl;
     } else {
-        std::cout << "Failed to calculate target pose" << std::endl;
+        std::cout << "No successful IK solutions found in " << num_tests << " tests." << std::endl;
     }
 }
 
