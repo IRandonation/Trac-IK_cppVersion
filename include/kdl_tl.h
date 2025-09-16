@@ -14,7 +14,11 @@
 
 // 可选：引入 Eigen（推荐）
 #include <Eigen/Dense>
+
+// 安全定义M_PI，避免重定义警告
+#ifndef M_PI
 #define M_PI 3.141593
+#endif
 
 namespace KDL {
 
@@ -42,6 +46,10 @@ namespace KDL {
         void restart(const JntArray& q_init);
 
         const JntArray& qout() const;
+        
+        // 获取迭代次数
+        int getIterationCount() const;
+        void resetIterationCount();
 
         int CartToJnt(const JntArray& q_init, const Frame& p_in, JntArray& q_out, const Twist& bounds = Twist::Zero());
         int step(int steps = 1);
@@ -51,6 +59,7 @@ namespace KDL {
         static void Add(const JntArray& q1, const JntArray& dq, JntArray& q2); // q1 + dq -> q2
         void clamp(JntArray& q); // 关节限位处理
         void randomize(JntArray& q); // 随机初始化（用于随机重启）
+        bool checkConvergence(const Twist& err); // 收敛检查
 
         // 成员变量
         const Chain& chain_;
@@ -76,6 +85,14 @@ namespace KDL {
 
         std::mt19937 rng_;
         std::vector<BasicJointType> joint_types_;
+        
+        // 添加迭代计数器
+        int iteration_count_;
+        
+        // 预分配雅可比矩阵
+        mutable KDL::Jacobian jacobian_cache_;
+        mutable KDL::Frame frame_cache_;
+        mutable KDL::Twist twist_cache_;
     };
 
 } // namespace KDL

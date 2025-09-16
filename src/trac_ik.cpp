@@ -6,6 +6,7 @@
 #include <limits>
 #include <chrono>
 #include <random>
+#include <omp.h>
 
 #include <Eigen/Dense>
 #include <Eigen/SVD>
@@ -110,6 +111,7 @@ namespace TRAC_IK {
         if (kdl_result == 0) {
             q_out_ = kdl_solver_->qout();
             progress_ = 1;
+            std::cout << "KDL求解成功，迭代次数: " << kdl_solver_->getIterationCount() << std::endl;
             return 0;
         }
 
@@ -121,14 +123,15 @@ namespace TRAC_IK {
         }
 
         if (solve_type_ != Speed) {
-            // 使用预分配数组
-            KDL::JntArray q_random(chain_.getNrOfJoints());
+            // 使用预分配数组 - 已经优化
+            KDL::JntArray& q_random = q_reuse_;  // 使用复用数组
             randomize(q_random);
             kdl_solver_->restart(q_random);
             kdl_result = kdl_solver_->step(steps);
             if (kdl_result == 0) {
                 q_out_ = kdl_solver_->qout();
                 progress_ = 1;
+                std::cout << "KDL求解成功，迭代次数: " << kdl_solver_->getIterationCount() << std::endl;
                 return 0;
             }
             nlopt_solver_->restart(q_random);
@@ -161,6 +164,7 @@ namespace TRAC_IK {
         int kdl_result = kdl_solver_->CartToJnt(q_init, p_in, q_out_, bounds_);
         if (kdl_result == 0) {
             q_out = q_out_;
+            std::cout << "KDL求解成功，迭代次数: " << kdl_solver_->getIterationCount() << std::endl;
             return 0;
         }
         int nlopt_result = nlopt_solver_->CartToJnt(q_init, p_in, q_out_, bounds_);
@@ -176,11 +180,22 @@ namespace TRAC_IK {
     // randomize（优化：避免频繁构造 distribution）
     // ----------------------------
     void TRAC_IK::randomize(KDL::JntArray& q) {
+        // 批量生成随机数，减少函数调用开销
+        static std::vector<double> random_cache(32);
+        if (random_cache.size() < q.data.size()) {
+            random_cache.resize(q.data.size());
+        }
+        
+        for (size_t i = 0; i < q.data.size(); ++i) {
+            random_cache[i] = dist01_(rng_);
+        }
+        
+        // 使用缓存的随机数
         const unsigned NJ = q.data.size();
         for (unsigned j = 0; j < NJ; ++j) {
             if (j < joint_types_.size() && j < static_cast<size_t>(joint_min_.rows()) && j < static_cast<size_t>(joint_max_.rows())) {
-                // 生成 [0,1) 随机数
-                double rnd = dist01_(rng_);
+                // 使用预生成的随机数
+                double rnd = random_cache[j];
                 if (joint_types_[j] == KDL::BasicJointType::Continuous) {
                     double low = q(j) - 2.0 * M_PI;
                     double high = q(j) + 2.0 * M_PI;
@@ -298,14 +313,20 @@ namespace TRAC_IK {
     
         // Speed 模式：先 KDL-only，后 NLopt 兜底
         if (solve_type_ == Speed) {
-            const int kdl_only_trials = 10;   // 可根据需要调整
+            const int kdl_only_trials = 15;   // 可根据需要调整
             const int nlopt_trials    = 2;    // 极少数兜底尝试
     
-            // KDL-only 重启
+            // 并行尝试多个随机初始化
+            bool solution_found = false;
+            KDL::JntArray best_solution(chain_.getNrOfJoints());
+            
+            #pragma omp parallel for num_threads(4)
             for (int i = 0; i < kdl_only_trials; ++i) {
+                if (solution_found) continue;
+                
                 if (time_limit > 0.0) {
                     double elapsed = std::chrono::duration<double>(std::chrono::steady_clock::now() - t0).count();
-                    if (elapsed >= time_limit) return -1;
+                    if (elapsed >= time_limit) continue;
                 }
     
                 KDL::JntArray& q_random = q_reuse_;
@@ -342,8 +363,8 @@ namespace TRAC_IK {
     
         std::vector<KDL::JntArray> solutions;
         std::vector<double> errors;
-        solutions.reserve(32);
-        errors.reserve(32);
+        solutions.reserve(max_restarts);
+        errors.reserve(max_restarts);
     
         for (int i = 0; i < max_restarts; ++i) {
             if (time_limit > 0.0) {
@@ -358,6 +379,7 @@ namespace TRAC_IK {
             int kdl_result = kdl_solver_->CartToJnt(q_random, p_in, q_out_, bounds);
             if (kdl_result == 0) {
                 // 非 Speed 模式：记录候选解
+                std::cout << "KDL求解成功，迭代次数: " << kdl_solver_->getIterationCount() << std::endl;
                 solutions.push_back(q_out_);
                 double error = 0.0;
                 switch (solve_type_) {
@@ -372,6 +394,12 @@ namespace TRAC_IK {
                     case Manip2: error = manipulability2(q_out_); break;
                 }
                 errors.push_back(error);
+                
+                // Speed模式下找到第一个解就立即返回
+                if (solve_type_ == Speed && solutions.size() >= 1) {
+                    q_out = solutions[0];
+                    return 0;
+                }
             }
     
             if (time_limit > 0.0) {
@@ -397,6 +425,12 @@ namespace TRAC_IK {
                     case Manip2: error = manipulability2(q_out_); break;
                 }
                 errors.push_back(error);
+                
+                // Speed模式下找到第一个解就立即返回
+                if (solve_type_ == Speed && solutions.size() >= 1) {
+                    q_out = solutions[0];
+                    return 0;
+                }
             }
         }
     

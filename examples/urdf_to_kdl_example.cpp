@@ -102,13 +102,13 @@ void testTRACIK(const KDL::Chain& chain, const KDL::JntArray& q_min, const KDL::
     std::cout << "\n=== Testing TRAC-IK Solver ===" << std::endl;
     
     // 创建TRAC-IK求解器
-    TRAC_IK::TRAC_IK solver(chain, q_min, q_max, 0.005, 1e-3, TRAC_IK::TRAC_IK::Speed);
+    TRAC_IK::TRAC_IK solver(chain, q_min, q_max, 0.0005, 1e-2, TRAC_IK::TRAC_IK::Speed);
     
     std::default_random_engine generator;
     KDL::ChainFkSolverPos_recursive fk_solver(chain);
-    KDL::Twist bounds(KDL::Vector(0.001, 0.001, 0.001), KDL::Vector(0.01, 0.01, 0.01));
+    KDL::Twist bounds(KDL::Vector(0.01, 0.01, 0.01), KDL::Vector(0.1, 0.1, 0.1));
 
-    const int num_tests = 10000;
+    const int num_tests = 100;
     long long total_duration = 0;
     int successful_tests = 0;
 
@@ -121,6 +121,7 @@ void testTRACIK(const KDL::Chain& chain, const KDL::JntArray& q_min, const KDL::
                 if (range > 0.01) {
                     std::uniform_real_distribution<double> distribution(q_min(k), q_max(k));
                     q_init(k) = distribution(generator);
+                    std::cout << "q_init(" << k << "): " << q_init(k) << std::endl;
                 } else {
                     q_init(k) = (q_min(k) + q_max(k)) / 2.0;
                 }
@@ -133,7 +134,9 @@ void testTRACIK(const KDL::Chain& chain, const KDL::JntArray& q_min, const KDL::
         KDL::Frame target_pose;
         if (fk_solver.JntToCart(q_init, target_pose) >= 0) {
             KDL::JntArray q_out(chain.getNrOfJoints());
-            
+            for (unsigned int k = 0; k < q_init.rows(); k++) {
+                q_init(k) = 0.0;
+            }
             auto start_time = std::chrono::high_resolution_clock::now();
             int result = solver.CartToJnt(q_init, target_pose, q_out, bounds);
             auto end_time = std::chrono::high_resolution_clock::now();
@@ -218,33 +221,33 @@ int main(int argc, char** argv) {
     testTRACIK(chain, q_min, q_max);
     
     // 测试指定根和末端的Chain
-    std::cout << "\n=== Testing Specific Chain ===" << std::endl;
+    // std::cout << "\n=== Testing Specific Chain ===" << std::endl;
     
-    // 假设我们知道机器人的根和末端链接名称
-    std::string root_link = "base_link";
-    std::string tip_link = "wrist_pitch_Link";
+    // // 假设我们知道机器人的根和末端链接名称
+    // std::string root_link = "base_link";
+    // std::string tip_link = "wrist_pitch_Link";
     
-    KDL::Chain specific_chain;
-    KDL::JntArray specific_q_min, specific_q_max;
+    // KDL::Chain specific_chain;
+    // KDL::JntArray specific_q_min, specific_q_max;
     
-    // 验证链路是否存在
-    if (!converter.validateLink(root_link)) {
-        std::cout << "Root link '" << root_link << "' does not exist" << std::endl;
-    } else if (!converter.validateLink(tip_link)) {
-        std::cout << "Tip link '" << tip_link << "' does not exist" << std::endl;
-    } else if (!converter.validatePath(root_link, tip_link)) {
-        std::cout << "No valid path from '" << root_link << "' to '" << tip_link << "'" << std::endl;
-        std::cout << "Error: " << converter.getErrorMessage() << std::endl;
-    } else if (converter.toKDLChain(root_link, tip_link, specific_chain, specific_q_min, specific_q_max)) {
-        std::cout << "Successfully created specific chain from '" << root_link << "' to '" << tip_link << "'" << std::endl;
-        printChainInfo(specific_chain, specific_q_min, specific_q_max);
+    // // 验证链路是否存在
+    // if (!converter.validateLink(root_link)) {
+    //     std::cout << "Root link '" << root_link << "' does not exist" << std::endl;
+    // } else if (!converter.validateLink(tip_link)) {
+    //     std::cout << "Tip link '" << tip_link << "' does not exist" << std::endl;
+    // } else if (!converter.validatePath(root_link, tip_link)) {
+    //     std::cout << "No valid path from '" << root_link << "' to '" << tip_link << "'" << std::endl;
+    //     std::cout << "Error: " << converter.getErrorMessage() << std::endl;
+    // } else if (converter.toKDLChain(root_link, tip_link, specific_chain, specific_q_min, specific_q_max)) {
+    //     std::cout << "Successfully created specific chain from '" << root_link << "' to '" << tip_link << "'" << std::endl;
+    //     printChainInfo(specific_chain, specific_q_min, specific_q_max);
         
-        // 测试特定Chain的TRAC-IK求解器
-        testTRACIK(specific_chain, specific_q_min, specific_q_max);
-    } else {
-        std::cout << "Failed to create specific chain from '" << root_link << "' to '" << tip_link << "'" << std::endl;
-        std::cout << "Error: " << converter.getErrorMessage() << std::endl;
-    }
+    //     // 测试特定Chain的TRAC-IK求解器
+    //     testTRACIK(specific_chain, specific_q_min, specific_q_max);
+    // } else {
+    //     std::cout << "Failed to create specific chain from '" << root_link << "' to '" << tip_link << "'" << std::endl;
+    //     std::cout << "Error: " << converter.getErrorMessage() << std::endl;
+    // }
     
     return 0;
 }

@@ -6,5 +6,5 @@ CXX_DEFINES = -DNDEBUG
 
 CXX_INCLUDES = -I/mnt/hgfs/RobotArm/Trac-IK_cppVersion/include -I/mnt/hgfs/RobotArm/Trac-IK_cppVersion/src -isystem /usr/include/eigen3
 
-CXX_FLAGS = -O3 -DNDEBUG -O3 -march=native
+CXX_FLAGS = -O3 -DNDEBUG -march=native -ffast-math -O3 -march=native -flto -fno-fat-lto-objects
 

@@ -4,8 +4,12 @@ project(TRAC_IK)
 
 set(CMAKE_CXX_STANDARD 17)
 
-# 设置编译模式为 Release（默认开启 -O3 和 -DNDEBUG）
+# 添加优化标志
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG -march=native -ffast-math")
 set(CMAKE_BUILD_TYPE Release)
+
+# 启用链接时优化
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
 
 # 强制添加优化选项（确保生效，不受默认配置影响）
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -march=native")

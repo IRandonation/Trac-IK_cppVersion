@@ -1,4 +1,6 @@
 #include "kdl_tl.h"
+#include <stdio.h>
+#include <iostream>
 
 namespace KDL {
 
@@ -23,7 +25,8 @@ namespace KDL {
           eps_(eps),
           rr_(random_restart),
           wrap_(try_jl_wrap),
-          done_(false)
+          done_(false),
+          iteration_count_(0)
     {
         rng_.seed(std::random_device{}());
         bounds_ = Twist::Zero();
@@ -62,11 +65,13 @@ namespace KDL {
         fk_solver_.JntToCart(q_curr_, f_curr_);
         f_target_ = p_in;
         done_ = false;
+        iteration_count_ = 0;
     }
     void ChainIkSolverPos_TL::restart(const JntArray& q_init) {
         q_curr_ = q_init;
         fk_solver_.JntToCart(q_curr_, f_curr_);
         done_ = false;
+        iteration_count_ = 0;
     }
 
     // ======================
@@ -84,7 +89,7 @@ namespace KDL {
         setBounds(bounds);
         restart(q_init, p_in);
 
-        const int max_iter = 200;
+        const int max_iter = 30; // 从200减少到50，快速失败
         for (int k = 0; k < max_iter; ++k) {
             if (step() == 0) {
                 q_out = q_curr_;
@@ -93,6 +98,7 @@ namespace KDL {
         }
         if (rr_) {
             randomize(q_curr_);
+            iteration_count_ = 0; // 重启时重置计数器
             for (int k = 0; k < max_iter; ++k) {
                 if (step() == 0) {
                     q_out = q_curr_;
@@ -111,7 +117,19 @@ namespace KDL {
         for (int s = 0; s < steps; ++s) {
             fk_solver_.JntToCart(q_curr_, f_curr_);
             Twist err = diff(f_curr_, f_target_);
-
+            
+            // 在step方法中添加停滞检测
+            if (iteration_count_ > 10) {
+                static double last_error = std::numeric_limits<double>::max();
+                double current_error = err.vel.Norm() + err.rot.Norm();
+                
+                if (std::abs(current_error - last_error) < eps_ * 0.01) {
+                    // 误差变化很小，可能陷入局部最优，提前退出
+                    return -1;
+                }
+                last_error = current_error;
+            }
+            
             bool ok = std::fabs(err.vel.x()) < bounds_.vel.x() &&
                       std::fabs(err.vel.y()) < bounds_.vel.y() &&
                       std::fabs(err.vel.z()) < bounds_.vel.z() &&
@@ -122,11 +140,12 @@ namespace KDL {
                 done_ = true;
                 return 0;
             }
-
+            
             vik_solver_.CartToJnt(q_curr_, err, delta_q_);
             Add(q_curr_, delta_q_, q_tmp_);
             clamp(q_tmp_);
             std::swap(q_curr_, q_tmp_);
+            iteration_count_++;
         }
         return -1;
     }
@@ -177,4 +196,15 @@ namespace KDL {
         }
     }
 
-} // namespace KDL
+    // ======================
+    // 迭代次数相关方法
+    // ======================
+    int ChainIkSolverPos_TL::getIterationCount() const {
+        return iteration_count_;
+    }
+
+    void ChainIkSolverPos_TL::resetIterationCount() {
+        iteration_count_ = 0;
+    }
+
+    } // namespace KDL

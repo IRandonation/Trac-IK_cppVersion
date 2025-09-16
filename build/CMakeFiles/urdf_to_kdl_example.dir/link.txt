@@ -1,1 +1,1 @@
-/usr/bin/c++ -O3 -DNDEBUG -O3 -march=native CMakeFiles/urdf_to_kdl_example.dir/examples/urdf_to_kdl_example.cpp.o -o urdf_to_kdl_example  -Wl,-rpath,/usr/local/lib libtrac_ik.a -lnlopt -lorocos-kdl -lurdfdom_model /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.7.0 
+/usr/bin/c++ -O3 -DNDEBUG -march=native -ffast-math -O3 -march=native -flto -fno-fat-lto-objects CMakeFiles/urdf_to_kdl_example.dir/examples/urdf_to_kdl_example.cpp.o -o urdf_to_kdl_example  -Wl,-rpath,/usr/local/lib libtrac_ik.a -lnlopt -lorocos-kdl -lurdfdom_model /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.7.0 
